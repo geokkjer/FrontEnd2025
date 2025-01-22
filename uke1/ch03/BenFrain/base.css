@@ -1,0 +1,5 @@
+@import url("portrait-screen.css") screen and (orientation: portrait);
+
+body {
+    color: chocolate;
+}

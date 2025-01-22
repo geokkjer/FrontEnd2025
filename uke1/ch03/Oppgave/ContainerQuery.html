@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Definer at .card-container er en container */
+        .card-container {
+            container-type: inline-size;
+            /* Måler containerens bredde */
+            container-name: card-container;
+            /* (Valgfritt) Navn for spesifikke container queries */
+        }
+
+        /* Bruk en container query for å tilpasse stiler */
+        @container (min-width: 300px) {
+            .card {
+                font-size: 1.2rem;
+                background-color: lightblue;
+            }
+        }
+
+        @container (min-width: 600px) {
+            .card {
+                font-size: 1.5rem;
+                background-color: lightgreen;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card-container" style="width:250px">
+        <div class="card">
+            <h2>Title</h2>
+            <p>Content</p>
+        </div>
+    </div>
+    <div class="card-container" style="width:450px">
+        <div class="card">
+            <h2>Title</h2>
+            <p>Content</p>
+        </div>
+    </div>
+    <div class="card-container"  style="width:750px">
+        <div class="card">
+            <h2>Title</h2>
+            <p>Content</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
