@@ -1,12 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=2.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=2.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
+    <style>
+      @media (min-width: 480px) {
+        body {
+          background-color: white;
+        }
+        .Nav {
+            float: left;
+            margin-right: 10px;
+            padding: 20px;
+        }
+      }
+      @media (min-width: 1000px){
+        .Nav{
+            margin: 0;
+            padding: 0;
+        }
+      }
+      .card-container{
+        container-type: inline-size;
+        container-name: card-container;
+      }
+      @container (min-width: 300px) {
+        .card{
+          font-size: 1.2rem;
+          background-color: lightblue;
+        }
+      }
+      @container (min-width: 600px){
+        .card {
+          font-size: 1.5rem;
+          background-color: lightgreen;
+        }
+      }
+    </style>
+    
     <h1>Hallo verden!</h1>
     Bla bla bla.
-</body>
+    <div class="card-container" style="width: 250px;">
+      <div class="card">
+        <h2>Title</h2>
+        <p>Content</p>
+      </div>
+    </div>
+    <div class="card-container" style="width: 450px;">
+      <div class="card">
+        <h2>Title</h2>
+        <p>Content</p>
+      </div>
+    </div>
+    <div class="card-container" style="width: 750px;">
+      <div class="card">
+        <h2>Title</h2>
+        <p>Content</p>
+      </div>
+    </div>
+  </body>
 </html>
