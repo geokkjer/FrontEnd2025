@@ -1,0 +1,87 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+.Wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.Header {
+  width: 100%;
+  height: 20%;
+  background-color: #038c5a;
+}
+.Header .CenterMe {
+  background-color: indigo;
+  color: #ebebeb;
+  font-family: "Oswald", sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  height: auto;
+  display: flex;
+  place-content: center;
+}
+.WrapMiddle {
+  height: 100%;
+  width: 100%;
+  font-size: 0;
+}
+.Left {
+  height: 70%;
+  width: 20.83%;
+  background-color: #03a66a;
+  display: inline-block;
+  position: absolute;
+  left: -200px;
+  width: 200px;
+  font-size: 0.9rem;
+  transition: transform 0.3s;
+}
+@media (min-width: 40rem) {
+  .Left {
+    width: 20.83%;
+    left: 0;
+    position: relative;
+  }
+}
+.container {
+  background-color: indigo;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.2rem;
+  min-height: 2.75rem;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+}
+.item,
+.last-item {
+  color: #ebebeb;
+  text-decoration: none;
+}
+.item {
+  margin-left: 1rem;
+}
+.last-item {
+  margin-left: auto;
+}
+.Middle {
+  height: 70%;
+  width: 68.75%;
+  font-size: 1.2rem;
+  background-color: #bbbf90;
+  display: inline-block;
+}
+.Right {
+  height: 70%;
+  width: 10.41%;
+  font-size: 1.3rem;
+  background-color: #03a66a;
+  display: inline-block;
+}
+.Footer {
+  height: 10%;
+  width: 100%;
+  background-color: #025059;
+  font-size: 1rem;
+}

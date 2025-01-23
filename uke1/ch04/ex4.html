@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="http://fonts.googleapis.com/css?family=Oswald:700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <title>Eksempel 4</title>
+  </head>
+  <body>
+    <style>
+        .container {
+            background-color: indigo;
+            font-family: "Oswald",sans-serif;
+            font-size: 1rem;
+            min-height: 2.75rem;
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            padding: 0 1rem;
+        }
+        .item,
+        .last-item{
+            color: #ebebeb;
+            text-decoration: none;
+        }
+        .item {
+            margin-right: 1rem;
+        }
+        .last-item{
+            margin-right: auto;
+        }
+        .InlineFlex {
+            display: inline-flex;
+            align-items: center;
+            height: 120px;
+            padding: 0 4px;
+            background-color: indigo;
+            color: #eddd;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+    </style>
+    <div class="container">
+      <a href="#" class="item">Home</a>
+      <a href="#" class="item">About Us</a>
+      <a href="#" class="item">Products</a>
+      <a href="#" class="item">Policy</a>
+      <a href="#" class="last-item">Contact Us</a>
+    </div>
+    <p>Here is a scentence with an <em class="InlineFlex">inline-flex</em></p>
+  </body>
+</html>
