@@ -1,3 +1,21 @@
 body{
     border: 2rem;
+    background-color: #e4e4e4;
+    color: #545454;
+    display: flexbox;
+    grid-area: "aside main";
+    flex-direction: column;
+}
+.ele{
+    background-color: bisque;
+    animation: bezerk 1s;
+}
+.sidebar{
+    container: side / block-size;
+}
+@media (prefers-color-shceme: dark){
+    body{
+        background-color: black;
+        color: antiquewhite;
+    }
 }
