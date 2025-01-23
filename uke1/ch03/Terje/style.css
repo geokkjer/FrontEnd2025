@@ -3,5 +3,7 @@ body{
 }
 .flex-container{
     display: flex;
-    flex-direction: column-reverse;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+
 }
