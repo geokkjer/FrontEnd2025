@@ -2,33 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My personal Library</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
-    />
-    <link rel="stylesheet" href="style.css">
-    <script src="common.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>Books</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"/>
   </head>
   <body>
-    <header class="header"><h1>Books</h1></header>
-    <search>Search
-        <form 
-            action="searchForBook">
-            <label for="Books">Find a book</label>
-            <input type="text" id="book" name="q">
-            <button>Search now</button>
-        </form>
-
-    </search>
-    <main>
-        
-        <div class="sort"></div>
-        <div class="showBooks"><ul>
-            <li>Book 1</li>
-        </ul></div>
-    </main>
-    <footer class="Footer">Made by hand!</footer>
+    <div class="container">
+      <header class="header">
+        <h1>Head</h1>
+        <nav class="nav">
+          <a href="#"><i class='bx bx-home-heart'></i></a>
+          <a href="#">About</a>
+          <a href="#"><i class='bx bx-log-in' ></i>Login</a>
+        </nav>
+      </header>
+      <aside class="left">Left</aside>
+      <main class="content">
+        <i class="bx bx-hot"></i>
+        <i class="bx bxs-hot"></i>
+        <i class="bx bxs-traffic"></i>
+        <div class="search">
+          <search>Search<input type="text" /></search>
+        </div>
+        <div class="list">List</div>
+      </main>
+      <footer class="footer">Footer</footer>
+    </div>
   </body>
 </html>

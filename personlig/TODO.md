@@ -5,3 +5,4 @@
 * edit meta info look up book api bookbrainz
 * Search
 * research pdf,epub reader library
+* onhoover info sheet from right

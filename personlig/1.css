@@ -1,0 +1,72 @@
+html,
+body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    /* display: grid;
+    grid-area: 
+    "header header header"
+    "main main main"
+    "footer footer footer"
+    ;
+} */}
+html {
+    height: 100%;
+}
+header{
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    height: 20%;
+    width: 100%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.nav{
+    height: 10%;
+    display: flex;
+    background-color: blueviolet;
+    overflow: hidden;
+}
+.nav a {
+    flex: 1 0 auto;
+    float: left;
+    display: block;
+}
+.nav .search{
+    float: right;
+    background-color: aqua;
+}
+main{
+    height: 100%;
+    width: 100%;
+    background-color: darkgoldenrod;
+    display: flex;
+    justify-content: center;
+}
+main .sort{
+    width: 20%;
+}
+main .sort h3{
+    height: 30px;
+    width: 100%;
+}
+.sortBar {
+    margin: 1rem;
+    justify-content: center;
+    background-color: indigo;
+    color: antiquewhite;
+}
+.showBooks {
+    width: 80%;
+    background-color: darkgreen;
+}
+.showBooks h3{
+    color: black;
+}
+footer{
+    padding: 1.5rem;
+    background-color: whitesmoke;
+    color: darkkhaki;
+}

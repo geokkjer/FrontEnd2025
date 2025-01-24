@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My personal Library</title>
+    <!-- <link 
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    /> -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
+    /> -->
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/htmx.org"></script>
+    <script src="common.js"></script>
+  </head>
+  <body>
+    <header class="header"><h1>Books</h1></header>
+    <nav class="nav">
+        <a href="Home">Home</a>
+        <a href="Login">Login</a>
+      <search class="search">
+        <form action="searchForBook">
+          <label for="Books">Search:</label>
+          <input type="text" id="book" name="q" />
+        </form>
+      </search>
+    </nav>
+    <main>
+      <div class="sort">
+        <h3>Sort</h3>
+        <ul>
+          <li class="sortBar">author</li>
+          <li class="sortBar">year</li>
+          <li class="sortBar">genre</li>
+        </ul>
+      </div>
+      <div class="showBooks"><h3>Your Books</h3></div>
+    </main>
+    <footer class="Footer">Made by hand!</footer>
+  </body>
+</html>
