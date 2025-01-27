@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8 - 10</title>
+    <style>
+        .container {
+            display: grid;
+            grid: repeat(2, 200px) / repeat(2, 200px);
+        }
+        [class*="child"] {
+            border: 2px dashed orange;
+        }
+        .parent{
+            display: grid;
+            grid-template-columns: subgrid;
+            grid-column: span 2;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="child">Child-1</div>
+      <div class="child">Child-2</div>
+      <div class="parent">
+        <div class="grandchild">Grandchild 3</div>
+        <div class="grandchild">Grandchild 4</div>
+      </div>
+    </div>
+  </body>
+</html>
