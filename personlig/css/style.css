@@ -11,7 +11,7 @@ body {
   width: 100vw;
 }
 .header {
-  height: 30%;
+  height: 100%;
   grid-area: header;
   text-align: center;
   background-color: bisque;
@@ -19,7 +19,9 @@ body {
 .container {
   height: 100%;
   width: 100%;
-  display: grid;
+  display: inline-grid;
+  grid-template-columns: repeat(5,1fr);
+  grid-template-rows: 1fr 5fr 1fr;
   grid-template-areas:
     "header header header header header header"
     "left middle middle middle middle middle"
@@ -50,10 +52,15 @@ body {
 }
 @media (max-width: 600px) {
   .container {
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: 1fr 1fr 5fr 1fr;
     grid-template-areas:
       "header header header header header header"
       "left left left left left left"
       "middle middle middle middle middle middle"
       "footer footer footer footer footer footer";
+  }
+  .left{
+    height: 20%;
   }
 }
