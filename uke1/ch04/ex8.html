@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 8</title>
+</head>
+<body>
+    <style>
+        html,
+        body{
+            margin: 0;
+            padding: 0;
+            color: #ebebeb;
+        }
+        .container{
+            background-color: indigo;
+            display: flex;
+            flex-direction: column;
+        }
+        .item{
+            display: flex;
+            align-items: center;
+            min-height: 6.25rem;
+            padding: 1rem;
+        }
+        header {
+            background-color: #105b63;
+        }
+        main{
+            background-color: #fffad5;
+            color: #333;
+        }
+        aside{
+            background-color: #ffd34e;
+        }
+        aside.aside-two{
+            background-color: #db9e36;
+            color: #333;
+        }
+        footer{
+            background-color: #bd4932;
+        }
+    </style>
+    <div class="container">
+        <header class="item">Header</header>
+        <aside class="item">Side One</aside>
+        <main class="item">Content</main>
+        <aside class="item aside-two">Side two</aside>
+        <footer class="item">Footer</footer>
+    </div>
+</body>
+</html>

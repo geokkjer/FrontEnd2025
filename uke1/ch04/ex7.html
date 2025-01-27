@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox ex 7</title>
+  </head>
+  <body>
+    <style>
+        html,
+        body{
+            margin: 0;
+            padding: 0;
+            color: #ebebeb;
+        }
+        html{
+            height: 100%;
+        }
+        body{
+            background-color: #ebebeb;
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+        }
+        main{
+            flex: 1 0 auto;
+            color: #333;
+            padding: 1.5rem;
+        }
+        footer {
+            background-color: violet;
+            color: #fff;
+            padding: 1.5rem;
+        }
+    </style>
+    <main>
+      <b>Here is a bunch of text Accusantium soluta minus eaque quod velit hic sed
+      neque.</b>
+    </main>
+    <footer>
+      I'd like this to be at the bottom and thanks to flexbox I can be put in my
+      place!
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wrap</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .rwd-Chapters_List{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .rwd-Chapter {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            position: relative;
+        }
+        .rwd-Chapter::before {
+            content: attr(data-number);
+            position: absolute;
+            left: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            font-weight: bold;
+            color: orange;
+        }
+        h2 {
+            margin: 0 0 10px;
+            font-size: 18px;
+            color: #333;
+        }
+        p {
+            margin: 0;
+            color: #666;
+        }
+        /* Responsive styling */
+        @media (min-width: 1000px) {
+            .rwd-Chapters_List {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            .rwd-Chapter {
+                flex: 0 0 33.33%;
+                padding: 20px;
+            }
+            .rwd-Chapter::before {
+                left: -20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Full Chapter List</h1>
+    <ul class="rwd-Chapters_List">
+        <li class="rwd-Chapter" data-number="1">
+            <h2>The Essentials of Responsive Web Design</h2>
+            <p>By the end of this first chapter, you will have made a fully responsive web page...</p>
+        </li>
+        <li class="rwd-Chapter" data-number="2">
+            <h2>Writing HTML Markup</h2>
+            <p>Good HTML markup is the basis for any good web site or application...</p>
+        </li>
+        <li class="rwd-Chapter" data-number="3">
+            <h2>Media Queries and Container Queries</h2>
+            <p>Media queries provide the means to change styles on screen width, screen height...</p>
+        </li>
+        <li class="rwd-Chapter" data-number="4">
+            <h2>Fluid Layout and Flexbox</h2>
+            <p>We start with understanding how to convert any web design into a proportional...</p>
+        </li>
+        <li class="rwd-Chapter" data-number="5">
+            <h2>Layout with CSS Grid</h2>
+            <p>CSS Grid is the first 2-dimensional layout system for the web...</p>
+        </li>
+        <li class="rwd-Chapter" data-number="6">
+            <h2>CSS Selectors, Typography, and More</h2>
+            <p>In this dense and varied chapter, you'll be learning about the latest CSS selectors...</p>
+        </li>
+    </ul>
+</body>
+</html>
