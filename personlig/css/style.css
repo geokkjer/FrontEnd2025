@@ -10,22 +10,34 @@ body {
   height: 100vh;
   width: 100vw;
 }
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 4fr 3fr ;
+  grid-template-rows: .5fr 6fr 0.5fr;
+  grid-template-areas:
+    "logo header header"
+    "left middle middle"
+    "left footer footer";
+}
 .header {
   height: 100%;
   grid-area: header;
   text-align: center;
   background-color: bisque;
 }
-.container {
-  height: 100%;
+.header nav {
+  grid-area: header;
+}
+.logo {
+  margin: 0;
+  padding: 0;
+  grid-area: logo;
+  background: #777;
   width: 100%;
-  display: inline-grid;
-  grid-template-columns: repeat(5,1fr);
-  grid-template-rows: 1fr 5fr 1fr;
-  grid-template-areas:
-    "header header header header header header"
-    "left middle middle middle middle middle"
-    "footer footer footer footer footer footer";
+  height: 100%;
 }
 .left,
 .content {
@@ -33,11 +45,14 @@ body {
   height: 100%;
 }
 .left {
+  background-color: grey;
+  background-image: linear-gradient(grey, rgb(105, 63, 63));
   grid-area: left;
 }
 .content {
   text-align: center;
-  background-color: indianred;
+  background-color: red;
+  background-image: linear-gradient(red, yellow) ;
   grid-area: middle;
   display: flex;
   flex-direction: row;
@@ -52,15 +67,17 @@ body {
 }
 @media (max-width: 600px) {
   .container {
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(3,1fr);
     grid-template-rows: 1fr 1fr 5fr 1fr;
     grid-template-areas:
-      "header header header header header header"
-      "left left left left left left"
-      "middle middle middle middle middle middle"
-      "footer footer footer footer footer footer";
+      "logo header header "
+      "left left left"
+      "middle middle middle"
+      "footer footer footer";
   }
   .left{
-    height: 20%;
+    background-color: grey;
+    background-image: linear-gradient(grey, black);
+    height: 1fr;
   }
 }
