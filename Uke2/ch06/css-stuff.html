@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Selectors, Typography, and More</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+    
+      }
+      body{
+        display: grid;
+      }
+      .container {
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 2fr 4fr 1fr;
+        grid-template-areas:
+          "logo Header Header"
+          "menu text Content"
+          "Footer Footer Footer";
+      }
+      .Header {
+        border: 2px solid slateblue;
+        background: red;
+        grid-area: Header;
+      }
+      .Content {
+        grid-area: Content;
+        border: 2px dashed burlywood;
+      }
+      .Footer {
+        grid-area: Footer;
+      }
+      .Text {
+        grid-area: text;
+      }
+      .menu {
+        grid-area: menu;
+      }
+      .logo {
+        grid-area: logo;
+        grid-area: "left middle right";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="Header">Head</header>
+      <div class="logo">logos</div>
+      <menu class="menu">Hello</menu>
+      <main class="Content">
+        <h1>Main</h1>
+        <article class="text">
+          Necessitatibus omnis natus est. Odio quos molestias quia. Rem ut eaque
+          aut aperiam omnis. Sit doloremque impedit similique repellendus
+          quidem. Iusto minima nam quas dolores quia. Laborum saepe sed
+          voluptatum excepturi accusantium veniam commodi temporibus quidem.
+          Eaque animi incidunt rerum eos sed dolorem omnis. Quos et dignissimos
+          rerum molestiae labore voluptas. Sed illum animi est commodi velit.
+          Nemo eius dolorum. Quibusdam corrupti expedita doloremque ullam neque
+          possimus esse. Amet ad perspiciatis quam corrupti amet quae neque sed
+          officiis. Aut quo qui deleniti nesciunt. Sunt assumenda praesentium
+          voluptatibus temporibus repellendus nihil. Saepe laboriosam laboriosam
+          ut aut veritatis sint. Sint possimus ex. Delectus hic sint et non.
+        </article>
+      </main>
+      <footer class="Footer">Footer</footer>
+    </div>
+  </body>
+</html>
