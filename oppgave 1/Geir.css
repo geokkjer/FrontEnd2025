@@ -1,0 +1,68 @@
+.header {
+  display: grid;
+  grid-area: header;
+  font-size: 24px;
+  border-bottom: 1px solid black;
+}
+.header h1 {
+  text-align: left, middle;
+}
+
+.left {
+  display: grid;
+  width: 100%;
+  background: white;
+  grid-area: aside;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.left .logo {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  color: orangered;
+  width: 100%;
+  display: grid;
+  grid-row: 1 / 1;
+}
+.left .nav1 {
+  display: grid;
+  grid-row: 2 / 6;
+  margin-right: 0;
+  padding: 0;
+  padding-left: 0;
+}
+.left .nav1 .ul1 {
+  list-style-type: none;
+}
+.left .nav1 .ul1 li {
+  border-radius: 12px;
+  border: 1px transparent 0;
+  box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  vertical-align: left;
+  padding: 0;
+  text-align: left;
+}
+.left .nav1 .ul1 li:focus {
+  color: orangered;
+  background-color: orange;
+  box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.6);
+}
+.left .nav2 {
+  display: grid;
+  grid-row: 11 / 11;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.left .nav2 .ul2 {
+  list-style-type: none;
+  padding: 6px;
+  margin: 0;
+}
+.left .User {
+  display: grid;
+  grid-row: 12 / 12;
+}

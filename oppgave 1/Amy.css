@@ -1,0 +1,61 @@
+.main .st1{
+    grid-area: first;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+    "street street street status status"
+    "street street street consump total"
+    "street street street real real"
+    ;
+  }
+
+  .st1 .street{
+    
+    grid-area: street;
+    padding: 20px;
+    margin-right: 15px;
+    border-radius: 10%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+
+  .st1 .status{
+    grid-area: status;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+  .st1 .consump{
+    grid-area: consump;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+  .st1 .total{
+    grid-area: total;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+  .st1 .real{
+    padding: 20px;
+    grid-area: real;
+    margin: 10px;
+    border-radius: 10%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+
+  .st1 .street .arrow{
+    font-size: 25px;
+    border-radius: 25%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0.2, 0.2, 0.4) 2px 2px, rgba(0, 0.2, 0.2, 0.1) 4px 4px;
+  }

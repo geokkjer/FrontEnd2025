@@ -1,0 +1,105 @@
+.main .st4{
+    grid-area: fourth;
+    display: grid;
+    gap: 1rem;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "state"
+    "consumption"
+    "consumption";
+}
+.st4 .state{
+    grid-area: state;
+    background: white;
+    border-radius: 10px;
+}
+
+.st4 .consumption{
+    grid-area: consumption;
+    background: white;
+    border-radius: 10px;
+}
+
+
+.main .st2{
+    grid-area: second;
+   
+    display: grid;
+    gap: 1rem;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "pirmas"
+    "antras"
+    "antras"
+    "antras"
+    "trecias"
+    "trecias"
+    ; 
+}
+
+.st2 .pirma{
+    grid-area: pirmas;
+}
+.pirma .date{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ 
+    font-weight: 700;
+}
+.date p{
+    background: white;
+    padding: 0.4rem;
+    font-size: 0.7rem;
+    border-radius: 12px;
+}
+.date p span{
+    align-self: center;
+    background: white;
+    padding: 0.2rem;
+}
+.date .filter-icon{
+    font-size: 0.8rem;
+    background: white;
+    padding: 0.4rem;
+    border-radius: 12px;
+}
+
+.st2 .month{
+    grid-area: antras;
+    display: grid;
+    gap: 1rem;
+
+    grid-template-columns: repeat(4, 1fr);
+    
+}
+.month .month1, .month2, .month3, .month4{
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 12px;
+    
+    align-items: center;
+}
+.st2 .trecia{
+    grid-area: trecias;
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    padding: 0 0.3rem 0 0.3rem;
+}
+.trecia .kwh{
+    
+    justify-self: end;
+}
+.trecia .pirma{
+    opacity: 0.6;
+}
+.trecia .antra{
+    font-weight: 700;
+}
+  
