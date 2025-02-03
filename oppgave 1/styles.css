@@ -45,6 +45,7 @@ body {
 }
 .main {
   max-width: 1400px;
+  max-height: 950px;
   display: grid;
   grid-area: main;
   
@@ -61,8 +62,61 @@ body {
   "third third third fourth fourth";
 
 }
+@media (max-width: 640px) {
+  .left {
+    display: none;
+  }
+  .header {
+    font-size: 12px;
+  }
+  #container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "header"
+        "main"
+        "main";
+  }
+  .main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "first"
+        "second"
+        "third"
+        "fourth";
+}
+.main .st1 {
+  max-width: auto;
+  grid-area: first;
+  display: flex;
+  flex-direction: column;
+}
+}
+@media (max-width: 1324px) {
+  .left {
+    display: none;
+  }
+  .header {
+    font-size: 18px;
+  }
 
-.st3{
-  grid-area: third;
-  border: 1px solid black;
+  #container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 0.5fr auto;
+    grid-template-areas: 
+    "header header header"
+    "main main main"
+    "main main main"
+    "main main main";
+  }
+} 
+@media print {
+  .left {
+    display: none;
+  }
+  .header {
+    display: none;
+  }
+
 }

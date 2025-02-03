@@ -10,7 +10,7 @@
 }
 
 .left {
-  display: grid;
+  display: grid; 
   width: 100%;
   background: white;
   grid-area: aside;
@@ -18,15 +18,17 @@
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 .left .logo {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  font-size: 18px;
+  /* margin: 10px;
+  padding: 30px; */
+  font-size: 24px;
   font-weight: bold;
   text-align: center;
-  color: orangered;
+  color: #E26925;
   width: 100%;
-  display: grid;
+  gap: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   grid-row: 1 / 1;
 }
 .left .nav1 {
@@ -38,7 +40,6 @@
   padding-left: 0;
 }
 .left .nav1 .ul1 {
-  
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -56,11 +57,12 @@
   text-align: center;
   justify-content: center;
 }
-.item:active {
-  color: orangered;
-  background-color: orange;
+.item:active, .item:hover {
+  color: #d36c30;
+  background-color: #FAD0B7;
+  transform: translateX(5px);
   box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.6);
-  border-radius: 13px;
+  border-radius: 9px;
 }
 .left .nav2 {
   display: grid;
@@ -79,24 +81,17 @@
   display: grid;
   grid-row: 12 / 12;
 }
-/* Hamburger */
-@media (max-width: 390px) {
-  .left {
+/* Hamburger Closed */
+#hamburger-menu {
+  display: none;
+}
+/* Hamburger show */
+@media (max-width: 640px) {
+  #menustate {
     display: none;
   }
-  .header {
-    font-size: 12px;
+  .open {
+    display: flex;
   }
-  .main {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: 
-    "first"
-    "first"
-    "second"
-    "second"
-    "third"
-    "third";
-  }
+
 }

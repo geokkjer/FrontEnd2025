@@ -10,14 +10,39 @@
   </head>
   <body>
     <div id="container">
-      <header class="header"><h1>Overview</h1></header>
+      <header class="header">
+        <h1>Overview</h1>
+        <div id="hamburger-menu">
+          <input aria-hidden="true" type="checkbox" id="menustate" />
+          <label for="menustate" class="open">≡</label>
+          <label for="menustate" class="close">×</label> 
+        </div>
+      </header>
       <main class="main">
         <div class="st1">
-            <div class="street">450 FASHION AVE, NY, USA   <span ><i class="arrow">▼</span></i> 
+            <div class="street">
+              <div class="text">450 FASHION AVE, NY, USA   <span ><i class="arrow">▼</span></i> </div>
+              <div class="solarimg"><img src="img/In-Line-Solar-System-Integrated.webp" alt="solar 1" class="solarimgs" > <img src="img/solar-on-roof6.jpg" alt="solar 2" class="solarimgs"></div>
+              <div class="dots">
+                <div class="dot" style="color: rgb(0, 0, 0);"></div>
+                <div class="dot" style="opacity: 30%;"></div>
+                <div class="dot" style="opacity: 30%;"></div>
+                <div class="dot" style="opacity: 30%;"></div>
+              </div>
               
+              <div class="text2">
+                <i class="smallgrey">Total Panel</i>
+                <div class="Bigletter">16 <i class="kwh">units</i></div>
+              </div>
               <div class="progress-container">
-                <div class="percentage-text">50%</div>
+                <div class="labels">
+                    <span class="smallgrey">ROI</span>
+                    <span class="smallgrey">100%</span>
+                </div>
+                <div class="percentage-text">55%</div>
+                
                 <div class="progress-bar"></div>
+                
             </div>
             </div> 
             <div class="status">
@@ -41,78 +66,136 @@
               <div class="Bigletter">100,90 <i class="kwh">kWh</i></div>
             </div>
             <div class="real"><i class="smallgrey">Real Time Power Usage</i>
-              <div class="Bigletter">100,90 <i class="kwh">kWh</i> <span class="alignright">▲20%</span>
+              <div class="Bigletter">100,90 <i class="kwh">kWh</i> 
             </div>
         </div>
-        <div class="st2">
+      </div>
+      <div class="st2">
+        <div class="pirma">
+          <div class="date">
+            <p>01.06.2023 - 30.09.2023 <span><i class="fa-solid fa-sort-down"></i></span> </p>
+            <span class="filter-icon">
+              <i class="fa-solid fa-filter"></i>
+            </span>
+          </div>
+        </div>
+        <div class="month">
+          <div class="month1">
+            <p>Jun</p>
+            <i class="fa-solid fa-cloud-sun"></i>
+            <p>280 kWh</p>
+          </div>
+          <div class="month2">
+            <p class="patamsintas">Jul</p>
+            <i class="fa-solid fa-sun patamsintas"></i>
+            <p class="patamsintas">301 kWh</p>
+          </div>
+          <div class="month3">
+            <p class="patamsintas">Aug</p>
+            <i class="fa-solid fa-cloud-sun patamsintas"></i>
+            <p class="patamsintas">189 kWh</p>
+          </div>
+          <div class="month4">
+            <p class="patamsintas">Sept</p>
+            <i class="fa-solid fa-cloud patamsintas"></i>
+            <p class="patamsintas">243 kWh</p>
+          </div>
+        </div>
+        <div class="trecia">
           <div class="pirma">
-            <div class="date">
-              <p>01.06.2023 - 30.09.2023 <span><i class="fa-solid fa-sort-down"></i></span> </p>
-              <span class="filter-icon">
-                <i class="fa-solid fa-filter"></i>
-              </span>
-            </div>
+            <p>Min/Max Used</p>
+            <p>Total Used</p>
           </div>
-          <div class="month">
-            <div class="month1">
-              <p>Jun</p>
-              <i class="fa-solid fa-cloud-sun"></i>
-              <p>280 kWh</p>
-            </div>
-            <div class="month2">
-              <p>Jul</p>
-              <i class="fa-solid fa-sun"></i>
-              <p>301 kWh</p>
-            </div>
-            <div class="month3">
-              <p>Aug</p>
-              <i class="fa-solid fa-cloud-sun"></i>
-              <p>189 kWh</p>
-            </div>
-            <div class="month4">
-              <p>Sept</p>
-              <i class="fa-solid fa-cloud"></i>
-              <p>243 kWh</p>
-            </div>
+          <div class="antra">
+            <p>August 189 kWh / July 301 kWh</p>
+            <p class="kwhh">318 kWh</p>
           </div>
-          <div class="trecia">
-            <div class="pirma">
-              <p>Min/Max Used</p>
-              <p>Total Used</p>
-            </div>
-            <div class="antra">
-              <p>Aug 189 kWh / July 301 kWh</p>
-              <p class="kwh">318 kWh</p>
-            </div>
-          </div>
+        </div>
 
-            
-        </div>
+          
+      </div>
+      
         <div class="st3">
-              
+        
         </div>
+        
         <div class="st4">
-            <div class="state">state</div>
-            <div class="consumption">consumption</div>
-        </div>
-          <!-- <div class="images">Bilder</div>s
-          <div class="status">Status</div>
-          <div class="class">Time</div>sss
-          <div class="cal1">cal1</div>ssss
-          <div class="cal2">cal2</div>sssss
-          <div class="cal3">cal3</div>ssssssss
-          <div class="cal4">cal4</div>ssss
-          <div class="consumption">consumption</div>ssssssssssssssssssssssssss
-          <div class="charge">charge</div>s
-          <div class="realtime">realtime</div>
-          <div class="graph">Graph</div>
-          <div class="state">State</div>s
-          <div class="home">Home Consumption</div> -->
+          <div class="state">
+            <div class="virsus">
+              <p>Current State</p>
+              <p>More info</p>
+            </div>
+            <div class="apacia">
+              <div class="kaire">
+                <p class="kwhh">7.5kWh</p>
+                <div class="border">
+                  <span class="orange"></span>
+                  <p class="energy">Exported Energy - 58%</p>
+
+                </div>
+              </div>
+              <div class="desne">
+                <p class="kwhh">6.5 kWh</p>
+                <div class="border">
+                  <span class="blue"></span>
+                  <p class="energy">Selfuse energy - 42%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="consumption">
+            <div class="cons-container">
+
+              <div class="virsus">
+                <p>Home Energy Consumption</p>
+                <p>More info</p>
+              </div>
+              <svg width="100%" height="20" viewBox="0 0 100 20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <defs>
+                <linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%">
+                  <stop offset="0%" style="stop-color: #FFA500; stop-opacity: 1" />
+                  <stop offset="38%" style="stop-color: #ff7417; stop-opacity: 1" />
+                  <stop offset="50%" style="stop-color: #33CC66; stop-opacity: 1" />
+                  <stop offset="75%" style="stop-color: #33CCCC; stop-opacity: 1" />
+                  <stop offset="100%" style="stop-color: #3366FF; stop-opacity: 1" />
+                </linearGradient>
+              </defs>
+              <rect x="0" y="5" width="100%" height="10" rx="1" ry="1" fill="url(#gradient)" />
+            </svg>
+            <div class="apaciaa">
+              
+              <div class="kaire">
+                <p>Maximal Used - 38%</p>
+                <p>Meter Energy - 27%</p>
+                <p>Utility Meter Uptime - 23%</p>
+                <p>UPS Input Voltage - 15%</p>
+                <p>Standart Tariff</p>
+                <p>Meter Energy</p>
+              </div>
+              <div class="desne">
+                <p>0.8 kW</p>
+                <p>2.358 kWh</p>
+                <p>75d 4h 15m</p>
+                <p>260.5 V</p>
+                <p>13.5 p/kWh</p>
+                <p>$2,55</p>
+              </div>
+            </div>
+          </div>
+          </div>
+      </div>
+        
 
       </main>
+      
       <aside class="left">
-        <div class="logo">Solar<i class='bx bx-sun'></i>Gate</div>
+       
+        <div class="logo">
+          Solar<i class='bx bx-sun'></i>Gate
+          
+      </div>
         <nav class="nav1">
+  
             <ul class="ul1">
                 <li class="item"><i class='bx bx-bar-chart-square'></i>Overview</li>
                 <li class="item"><i class="bx bx-globe"></i>My objects</li>
