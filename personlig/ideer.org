@@ -1,0 +1,78 @@
+#+Author: Geir Okkenhaug Jerstad
+
+Litterate  programming projects
+
+* Work server apps and dev environments
+Some nix modules . THe idea is to have a premade set of services and dev enviromants that are work related.
+** .envrc
+
+#+begin_src shell :tangle .envrc
+use nix
+#+end_src
+
+** Dev
+
+Nix or Guix maybe both
+
+*** Go
+#+begin_src nix
+
+#+end_src
+*** Web
+
+HTML dev server
+#+begin_src nix
+
+#+end_src
+js  ts deno nodejs
+#+begin_src nix
+
+#+end_src
+
+Vue
+#+begin_src nix
+
+#+end_src
+
+** Services
+*** Forgejo
+#+begin_src nix
+
+#+end_src
+*** Mail ???
+#+begin_src nix
+
+#+end_src
+* Web app books
+
+** Frontend
+
+Design
+
+HTML
+
+CSS
+
+
+
+** With in VUEjs
+** With HTMX - Go
+
+#+begin_src go
+  
+#+end_src
+* yt music tui/emacs player ???
+** go with
+
+#+begin_src go
+
+#+end_src
+** Emacs
+
+#+begin_src emacs-lisp
+
+#+end_src
+* Server dashboard
+** Research + bootstrap maybe/ tailwind
+* CV side
+* Firma side ???
