@@ -2,6 +2,7 @@
   display: grid;
   grid-area: header;
   font-size: 24px;
+  /* text-shadow: 2px 2px; */
   border-bottom: 1px solid black;
 }
 .header h1 {
@@ -20,6 +21,8 @@
   margin: 0;
   padding: 0;
   width: 100%;
+  font-size: 18px;
+  font-weight: bold;
   text-align: center;
   color: orangered;
   width: 100%;
@@ -27,6 +30,7 @@
   grid-row: 1 / 1;
 }
 .left .nav1 {
+  margin-top: 1rem;
   display: grid;
   grid-row: 2 / 6;
   margin-right: 0;
@@ -34,21 +38,29 @@
   padding-left: 0;
 }
 .left .nav1 .ul1 {
+  
   list-style-type: none;
-}
-.left .nav1 .ul1 li {
-  border-radius: 12px;
-  border: 1px transparent 0;
-  box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  vertical-align: left;
   padding: 0;
-  text-align: left;
+  margin: 0;
 }
-.left .nav1 .ul1 li:focus {
+.item {
+  user-select: none;
+  height: 35px;
+  font-size: 16px;
+  font-weight: bolder;
+  border: 2px transparent;
+  border-radius: 7px;
+  /* box-shadow: 1px 1px; */
+  cursor: pointer;
+  padding: 8px;
+  text-align: center;
+  justify-content: center;
+}
+.item:active {
   color: orangered;
   background-color: orange;
   box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.6);
+  border-radius: 13px;
 }
 .left .nav2 {
   display: grid;
@@ -63,6 +75,28 @@
   margin: 0;
 }
 .left .User {
+  text-align: center;
   display: grid;
   grid-row: 12 / 12;
+}
+/* Hamburger */
+@media (max-width: 390px) {
+  .left {
+    display: none;
+  }
+  .header {
+    font-size: 12px;
+  }
+  .main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "first"
+    "first"
+    "second"
+    "second"
+    "third"
+    "third";
+  }
 }

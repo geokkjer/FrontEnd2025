@@ -22,7 +22,7 @@
 
   .st1 .status{
     grid-area: status;
-    padding: 20px;
+    padding: 10px;
     margin: 10px;
     border-radius: 10%;
     background-color: rgb(255, 255, 255);
@@ -30,7 +30,7 @@
   }
   .st1 .consump{
     grid-area: consump;
-    padding: 20px;
+    padding: 10px;
     margin: 10px;
     border-radius: 10%;
     background-color: rgb(255, 255, 255);
@@ -38,14 +38,14 @@
   }
   .st1 .total{
     grid-area: total;
-    padding: 20px;
+    padding: 10px;
     margin: 10px;
     border-radius: 10%;
     background-color: rgb(255, 255, 255);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
   .st1 .real{
-    padding: 20px;
+    padding: 10px;
     grid-area: real;
     margin: 10px;
     border-radius: 10%;
@@ -59,3 +59,55 @@
     background-color: rgb(255, 255, 255);
     box-shadow: rgba(0, 0.2, 0.2, 0.4) 2px 2px, rgba(0, 0.2, 0.2, 0.1) 4px 4px;
   }
+
+  .st1 .street .progress-container {
+    position: relative;
+    width: 100%;
+    height: 8px; 
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.st1 .street .progress-bar {
+    height: 100%;
+    background-color: #eb734f;
+    width: 50%; 
+    border-radius: 5px;
+}
+
+.st1 .street .percentage-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: -25px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .st1 .street .img{
+    max-width: 10%;
+    height: 10px;
+  }
+
+  .st1 .status{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .smallgrey{
+    opacity: 70%;
+    font-size: 15px
+  }
+  
+  .Bigletter{
+    padding-top: 8px;
+    font-size: larger;
+    font-weight: bold;
+  }
+  .kwh{
+    opacity: 60%;
+    font-size: 12px
+  }
+
+ 
