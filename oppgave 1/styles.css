@@ -63,6 +63,13 @@ body {
   "third third third fourth fourth";
 
 }
+@media (max-width: 840px){
+  .st3 .model{
+    top: 200px;
+    left: 50px;
+  }
+}
+
 @media (max-width: 640px) {
   .header {
     text-align: center;
@@ -116,6 +123,17 @@ body {
 
   .main .st4{
     margin: 0 0.7em 0 0.7em;
+  }
+  .st3 .model{
+    top: 120px;
+    left: 60px;
+  }
+  .model p{
+    font-size: 0.5rem;
+
+  }
+  .modal .right-model{
+    padding-left:0;
   }
 }
 

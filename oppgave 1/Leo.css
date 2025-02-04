@@ -107,16 +107,38 @@
 }
 
 .st3 .model{
-  font-size: 0.75rem;
+  font-size: 0.60rem;
   display: flex;
   justify-content: space-between;
   background: white;
   box-shadow: 0px 4px 8px rgba(2, 3, 3, 0.2);
   border: 1px solid rgb(202, 202, 202);
   border-radius: 9px;
-  padding: 0 20px 0 20px;
+  padding: 0 10px 0 10px;
   z-index: 99;
   position: absolute;
   top: 150px;
   left: 150px;
 }
+.left-model p{
+  padding-left: 0.7em;
+  color: #696969;
+}
+.left-model p:nth-child(1){
+  border-left: 3px solid orange;
+}
+.left-model p:nth-child(2){
+  border-left: 3px solid blue;
+
+}
+.left-model p:nth-child(3){
+  border-left: 3px solid green;
+
+}
+
+.right-model{
+  font-weight: 600;
+  padding-left: 2rem;
+}
+
+
