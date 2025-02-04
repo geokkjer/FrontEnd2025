@@ -1,15 +1,4 @@
-.main .st3 {
-  grid-area: third;
-  display: flex;
-    justify-content: center;
-    align-items: center;
-  background: #fff;
-  border-radius: 8%;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  position: relative;
-  margin-top: 20px;
-}
+/* 
 
 .graph .labels.x-labels {
   text-anchor: middle;
@@ -22,96 +11,112 @@
 .graph {
   height: 500px;
   width: 800px;
-}
+}s
 
 .graph .grid {
   stroke: #ccc;
   stroke-dasharray: 0;
   stroke-width: 1;
-}
+} */
 
-.labels {
+/* .labels {
   font-size: 13px;
-}
+} */
 
-.label-title {
+/* .label-title {
   font-weight: bold;
   text-transform: uppercase;
   font-size: 12px;
   fill: black;
-}
+} */
 
-.data {
+/* .data {
   fill: red;
   stroke-width: 1;
-}
+} */
 
-.st3 {
+.main .st3 {
+  grid-area: third;
   display: flex;
   flex-direction: column; 
-  justify-content: flex-start;
   align-items: center;
+  justify-content: center;
   background: #fff;
-  border-radius: 20px;
+  border-radius: 9px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   position: relative;
-  padding: 20px; 
-  overflow: hidden;
+  padding: 10px 20px 10px 20px ; 
 }
 
-.st3::before {
-  content: '';
+.st3 .bottom-st3{
+  font-size: 0.8rem;
+  display: flex;
+  gap: 2rem;
+}
+.bottom-st3 p{
+  color: #8d8d8d;
+  padding-left: 0.7em;
+  font-weight: 600;
+}
+.bottom-st3 p:nth-child(1){
+  border-left: 3px solid orange;
+}
+.bottom-st3 p:nth-child(2){
+  border-left: 3px solid blue;
+}
+.bottom-st3 p:nth-child(3){
+  border-left: 3px solid green;
+}
+
+.st3 .st3-svg{
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 95%;
+  /* height: 100%; */
   background: no-repeat center/contain;
-  background-image: url('data:image/svg+xml;charset=utf-8, \
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -20 520 360"> \
-      <!-- Gridlines --> \
-      <g class="gridlines"> \
-        <line x1="40" y1="0" x2="500" y2="0" stroke="%23ccc" /> \
-        <line x1="40" y1="50" x2="500" y2="50" stroke="%23ccc" /> \
-        <line x1="40" y1="100" x2="500" y2="100" stroke="%23ccc" /> \
-        <line x1="40" y1="150" x2="500" y2="150" stroke="%23ccc" /> \
-        <line x1="40" y1="200" x2="500" y2="200" stroke="%23ccc" /> \
-        <line x1="40" y1="250" x2="500" y2="250" stroke="%23ccc" /> \
-        <line x1="40" y1="300" x2="500" y2="300" stroke="%23ccc" /> \
-      </g> \
-      \
-      <!-- Horizontal Labels (0 to 300) --> \
-      <text x="10" y="10" font-size="10">300</text> \
-      <text x="10" y="60" font-size="10">250</text> \
-      <text x="10" y="110" font-size="10">200</text> \
-      <text x="10" y="160" font-size="10">150</text> \
-      <text x="10" y="210" font-size="10">100</text> \
-      <text x="10" y="260" font-size="10">50</text> \
-      <text x="10" y="310" font-size="10">0</text> \
-      \
-      <!-- Horizontal Labels (Jan to Dec) --> \
-      <text x="40" y="340" font-size="10">Jan</text> \
-      <text x="80" y="340" font-size="10">Feb</text> \
-      <text x="120" y="340" font-size="10">Mar</text> \
-      <text x="160" y="340" font-size="10">Apr</text> \
-      <text x="200" y="340" font-size="10">May</text> \
-      <text x="240" y="340" font-size="10">Jun</text> \
-      <text x="280" y="340" font-size="10">Jul</text> \
-      <text x="320" y="340" font-size="10">Aug</text> \
-      <text x="360" y="340" font-size="10">Sep</text> \
-      <text x="400" y="340" font-size="10">Oct</text> \
-      <text x="440" y="340" font-size="10">Nov</text> \
-      <text x="480" y="340" font-size="10">Dec</text> \
-      \
-      <!-- Graph Lines (Orange, Green, and Blue) --> \
-      <path d="M40 200 C90 170, 140 220, 140 150 C210 100, 260 250, 280 130 S360 200, 400 90 S480 220, 500 120" stroke="orange" fill="none"/> \
-      <path d="M40 180 C100 220, 150 240, 200 180 S220 220, 300 240 S350 120, 490 90" stroke="green" fill="none"/> \
-      <path d="M40 200 C20 150, 200 180, 260 80 S320 110, 400 100 S480 70, 500 120" stroke="blue" fill="none"/> \
-      \
-      <!-- Vertical Line for Points --> \
-      <line x1="260" y1="0" x2="260" y2="300" stroke="black" stroke-dasharray="5" /> \
-      \
-      <!-- Circles for Points on Lines --> \
-      <circle cx="260" cy="180" r="5" fill="orange" /> \
-      <circle cx="260" cy="220" r="5" fill="green" /> \
-      <circle cx="260" cy="80" r="5" fill="blue" /> \
-    </svg>');
+}
+
+.st3 .top-st3{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 0;
+}
+.st3 .top-st3 .top-left{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.top-st3 p:nth-child(1){
+  font-weight: 600;
+}
+.top-st3 p:nth-child(2){
+  font-size: 0.7rem;
+  color: #8d8d8d;
+}
+.top-st3 span{
+  color: rgb(255, 123, 0);
+}
+.st3 .top-right{
+  display: flex;
+  gap: 0.8rem;
+  color: #8d8d8d;
+  font-size: 0.8rem;
+  font-weight: 600;
+  align-items: center;
+  justify-content: end;
+}
+
+.st3 .model{
+  font-size: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  box-shadow: 0px 4px 8px rgba(2, 3, 3, 0.2);
+  border: 1px solid rgb(202, 202, 202);
+  border-radius: 9px;
+  padding: 0 20px 0 20px;
+  z-index: 99;
+  position: absolute;
+  top: 150px;
+  left: 150px;
 }

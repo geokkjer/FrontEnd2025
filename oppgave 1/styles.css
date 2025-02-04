@@ -2,7 +2,8 @@
 @import "Egidijus.css";
 @import "Geir.css";
 @import "Leo.css";
-
+@import "media-queries.css";
+@import "hamburger.css";
 
 
 * {
@@ -63,11 +64,9 @@ body {
 
 }
 @media (max-width: 640px) {
-  .left {
-    display: none;
-  }
   .header {
-    font-size: 12px;
+    text-align: center;
+    font-size: 18px;
   }
   #container {
     grid-template-columns: 1fr;
@@ -78,6 +77,9 @@ body {
         "main";
   }
   .main {
+    display: flex;
+    flex-direction: column; 
+    align-items: stretch; 
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-template-areas: 
@@ -92,31 +94,28 @@ body {
   display: flex;
   flex-direction: column;
 }
-}
-@media (max-width: 1324px) {
-  .left {
-    display: none;
-  }
-  .header {
-    font-size: 18px;
-  }
 
-  #container {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 0.5fr auto;
-    grid-template-areas: 
-    "header header header"
-    "main main main"
-    "main main main"
-    "main main main";
-  }
-} 
-@media print {
-  .left {
-    display: none;
-  }
-  .header {
-    display: none;
-  }
-
+.main .st1 .street{
+  max-height: 550px;
+  display: flex;
+  flex-direction: column;
 }
+
+.main .st2{
+  margin: 0 0.7em 0 0.7em;
+}
+
+.main .st3{
+  margin: 0 0.7em 0 0.7em;
+  /* width: 100%; */
+  min-height: 450px;
+ 
+  
+  
+}
+
+  .main .st4{
+    margin: 0 0.7em 0 0.7em;
+  }
+}
+

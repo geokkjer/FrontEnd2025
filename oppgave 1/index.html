@@ -12,11 +12,6 @@
     <div id="container">
       <header class="header">
         <h1>Overview</h1>
-        <div id="hamburger-menu">
-          <input aria-hidden="true" type="checkbox" id="menustate" />
-          <label for="menustate" class="open">≡</label>
-          <label for="menustate" class="close">×</label> 
-        </div>
       </header>
       <main class="main">
         <div class="st1">
@@ -41,9 +36,8 @@
                 </div>
                 <div class="percentage-text">55%</div>
                 
-                <div class="progress-bar"></div>
-                
-            </div>
+                <div class="progress-bar"></div>  
+              </div>
             </div> 
             <div class="status">
               <div class="stat">
@@ -66,7 +60,9 @@
               <div class="Bigletter">100,90 <i class="kwh">kWh</i></div>
             </div>
             <div class="real"><i class="smallgrey">Real Time Power Usage</i>
-              <div class="Bigletter">100,90 <i class="kwh">kWh</i> 
+              <div class="usagereal">
+                <div class="Bigletter">100,90 <i class="kwh">kWh</i></div> 
+                <div class="Bigletter" style="color: rgb(2, 189, 2);">▲20%</div>
             </div>
         </div>
       </div>
@@ -116,6 +112,84 @@
       </div>
       
         <div class="st3">
+          <div class="model">
+            <div class="left-model">
+              <p>Energy Produced</p>
+              <p>Energy Consumption</p>
+              <p>Energy Sold to The Grid</p>
+            </div>
+            <div class="right-model">
+              <p>127kWh</p>
+              <p>230kWh</p>
+              <p>85kWh</p>
+            </div>
+          </div>
+          <div class="top-st3">
+            <div class="top-left">
+              <p>Energy Produced</p>
+              <p><span><i class="fa-solid fa-bolt"></i></span> 300kWh</p>
+            </div>
+            <div class="top-right">
+              <p>Yearly</p>
+              <i class="fa-solid fa-sort-down"></i>
+              
+            </div>
+          </div>
+          <div class="st3-svg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -20 520 360">
+              <!-- Gridlines -->
+              <g class="gridlines">
+                <line x1="40" y1="0" x2="500" y2="0" stroke="#ccc" />
+                <line x1="40" y1="50" x2="500" y2="50" stroke="#ccc" />
+                <line x1="40" y1="100" x2="500" y2="100" stroke="#ccc" />
+                <line x1="40" y1="150" x2="500" y2="150" stroke="#ccc" />
+                <line x1="40" y1="200" x2="500" y2="200" stroke="#ccc" />
+                <line x1="40" y1="250" x2="500" y2="250" stroke="#ccc" />
+                <line x1="40" y1="300" x2="500" y2="300" stroke="#ccc" />
+              </g>
+          
+              <!-- Horizontal Labels (0 to 300) -->
+              <text x="10" y="10" font-size="10">300</text>
+              <text x="10" y="60" font-size="10">250</text>
+              <text x="10" y="110" font-size="10">200</text>
+              <text x="10" y="160" font-size="10">150</text>
+              <text x="10" y="210" font-size="10">100</text>
+              <text x="10" y="260" font-size="10">50</text>
+              <text x="10" y="310" font-size="10">0</text>
+          
+              <!-- Horizontal Labels (Jan to Dec) -->
+              <text x="40" y="340" font-size="10">Jan</text>
+              <text x="80" y="340" font-size="10">Feb</text>
+              <text x="120" y="340" font-size="10">Mar</text>
+              <text x="160" y="340" font-size="10">Apr</text>
+              <text x="200" y="340" font-size="10">May</text>
+              <text x="240" y="340" font-size="10">Jun</text>
+              <text x="280" y="340" font-size="10">Jul</text>
+              <text x="320" y="340" font-size="10">Aug</text>
+              <text x="360" y="340" font-size="10">Sep</text>
+              <text x="400" y="340" font-size="10">Oct</text>
+              <text x="440" y="340" font-size="10">Nov</text>
+              <text x="480" y="340" font-size="10">Dec</text>
+          
+              <!-- Graph Lines (Orange, Green, and Blue) -->
+              <path d="M40 200 C90 170, 140 220, 140 150 C210 100, 260 250, 280 130 S360 200, 400 90 S480 220, 500 120" stroke-width="3" stroke="orange" fill="none"/>
+              <path d="M40 180 C100 220, 150 240, 200 180 S220 220, 300 240 S350 120, 490 90" stroke-width="3" stroke="green" fill="none"/>
+              <path d="M40 200 C20 150, 200 180, 260 80 S320 110, 400 100 S480 70, 500 120" stroke-width="3" stroke="blue" fill="none"/>
+          
+              <!-- Vertical Line for Points -->
+              <line x1="260" y1="0" x2="260" y2="300" stroke="black" stroke-dasharray="5" />
+          
+              <!-- Circles for Points on Lines -->
+              <circle cx="260" cy="180" r="5" fill="orange" />
+              <circle cx="260" cy="220" r="5" fill="green" />
+              <circle cx="260" cy="80" r="5" fill="blue" />
+            </svg>
+          </div>
+          <div class="bottom-st3">
+            <p>Energy Produced</p>
+            <p>Energy Conumption</p>
+            <p>Energy Sold to The Grid</p>
+          </div>
         
         </div>
         
@@ -150,7 +224,7 @@
                 <p>Home Energy Consumption</p>
                 <p>More info</p>
               </div>
-              <svg width="100%" height="20" viewBox="0 0 100 20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+              <svg width="100%" height="11" viewBox="0 0 100 20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                 <defs>
                 <linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%">
                   <stop offset="0%" style="stop-color: #FFA500; stop-opacity: 1" />
@@ -188,14 +262,11 @@
 
       </main>
       
-      <aside class="left">
-       
+      <aside id="side" class="left">
         <div class="logo">
           Solar<i class='bx bx-sun'></i>Gate
-          
       </div>
         <nav class="nav1">
-  
             <ul class="ul1">
                 <li class="item"><i class='bx bx-bar-chart-square'></i>Overview</li>
                 <li class="item"><i class="bx bx-globe"></i>My objects</li>
@@ -210,9 +281,30 @@
             </ul>
         </nav>
         <div class="User">
-          <div class="item"><img src="img/icons8-user-100.png" alt="User Picture" width="30px" >User Name</div>
+          <div class="item-user">
+            <div>
+              <img src="img/icons8-user-100.png" alt="User Picture" >
+
+            </div>
+            <p>User Name</p>
+          </div>
         </div>
       </aside>
-    </div>
+      <input type="checkbox" id="hamburger-input" class="burger-shower" />
+      <label id="hamburger-menu" for="hamburger-input">
+        <nav id="sidebar-menu">
+          <h3 class="logo">Solar<i class='bx bx-sun'></i>Gate</h3>
+          <ul class="ul1">
+            <li class="item"><i class='bx bx-bar-chart-square'></i>Overview</li>
+            <li class="item"><i class="bx bx-globe"></i>My objects</li>
+            <li class="item"><i class='bx bx-up-arrow-circle'></i>Upgrades</li>
+            <li class="item"><i class='bx bxs-report'></i>Reports</li>
+          </ul>
+        </nav>
+      </label>
+  
+      <div class="overlay"></div>
+     
+   
   </body>
 </html>
