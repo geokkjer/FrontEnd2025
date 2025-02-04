@@ -58,7 +58,7 @@
   justify-content: center;
 }
 .item:active, .item:hover {
-  color: #d36c30;
+  color: #E26925;
   background-color: #FAD0B7;
   transform: translateX(5px);
   box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.6);
