@@ -1,0 +1,3 @@
+#+Author: Geir O. Jerstad
+
+* Tittel
