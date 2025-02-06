@@ -1,11 +1,20 @@
+# Refleksjons notat
 
-# Table of Contents
+I oppgave 1 fikk vi en utfordring med å gjenskape et dashboard med responsiv design.
 
-1.  [Tittel](#org215d932)
+## Relevans fra pensum
 
+Vi fikk bruk for mage deler av pensum
+Sematisk html
 
+## Tre valg
 
-<a id="org215d932"></a>
+css grid .
 
-# Tittel
+media queries
 
+hamburger meny css vs js
+
+## Responsivitet
+
+layout i grid og bruk av flex
