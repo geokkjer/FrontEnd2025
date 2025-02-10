@@ -1,0 +1,118 @@
+.header {
+  display: grid;
+  grid-area: header;
+  font-size: 24px;
+  /* text-shadow: 2px 2px; */
+  border-bottom: 1px solid black;
+}
+.header h1 {
+  text-align: left, middle;
+}
+
+.left {
+  display: grid; 
+  width: 100%;
+  background: white;
+  grid-area: aside;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.left .logo {
+  /* margin: 10px;
+  padding: 30px; */
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: #E26925;
+  width: 100%;
+  gap: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-row: 1 / 1;
+}
+.left .nav1 {
+  margin-top: 1rem;
+  display: flex;
+  font-size: 24px;
+  grid-row: 2 / 6;
+
+
+}
+.left .nav1 .ul1 {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.item {
+  color: #7C7C7C;
+  user-select: none;
+  /* height: 35px; */
+  /* width: 90%; */
+  font-size: 16px;
+  font-weight: 600;
+  border: 2px transparent;
+  border-radius: 7px;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  text-align: center;
+  align-content: center;
+  margin-left: 0.3em;
+  padding: 0.8em 1.3em 0.8em 1em;
+
+}
+.item i{
+  padding: 0 0.6em 0 0.6em;
+  /* font-size: 1.2rem; */
+}
+
+
+.item:active, .item:hover, .item-user:hover {
+  color: #DF6923;
+  background-color: #FAD0B7;
+  transform: translateX(5px);
+  box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.6);
+  border-radius: 9px;
+}
+.left .nav2 {
+  display: flex;
+  grid-row: 11 / 11;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.left .nav2 .ul2 {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.left .User {
+  display: flex;
+  align-items: center; 
+  grid-row: 12 / 12; 
+  height: 30px;
+}
+
+.left .item-user {
+  display: flex;
+  align-items: center; 
+  gap: 8px; 
+  color: #7C7C7C;
+  font-weight: 600;
+  border: 2px transparents;
+  border-radius: 7px;
+  cursor: pointer;
+  padding: 8px;
+  margin: 0 auto;
+  height: 45px;
+
+}
+.item-user:hover{
+  color: #DF6923;
+}
+.User img{
+  width: 32px;
+  height: 32px;
+}
+

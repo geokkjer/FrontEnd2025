@@ -1,0 +1,60 @@
+@media print {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  .left,
+  .header {
+    visibility: hidden;
+    display: none;
+  }
+  #container {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(5,1fr);
+    grid-template-areas:
+    "main main main main main"
+    "main main main main main"
+    "main main main main main"
+    "main main main main main"
+    "main main main main main"
+    ;   
+  }
+  /* .main {
+    height: 100vh;
+    width: 100vw;
+   
+  } */
+  .main .st1 .street {
+    margin: 2px;
+    height: 100%;
+  }
+  .main .st1 .status {
+    height: 80%;
+  }
+  .main .st1 .consump {
+    margin: 2px;
+    height: 80%;
+  }
+  .main .st1 .total {
+    margin: 2px;
+    height: 80%;
+  }
+  .main .st1 .real {
+    height: 90%;
+  }
+  .main .st2 {
+    width: 100%;
+  }
+  .main .st3 {
+    height: 100%;
+  }
+  .main .st4 {
+    width: 90%;
+    height: 100%;
+  }
+}
+

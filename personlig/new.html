@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+* {
+   box-sizing: border-box; 
+}
+#container {
+    margin: 0;
+    padding: 0;
+}
+header h1 {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1em;
+}
+header h1::before,
+header h1::after {
+  content: "";
+  border-top: 0.1em double black;
+  align-self: center;
+}
+</style>
+<body>
+    <div id="container">
+        <header><h1>Header</h1></header>
+        <main>
+            <aside>side</aside>
+            <article>Art</article>
+        </main>
+        <footer>Footer</footer>
+    </div>
+</body>
+</html>

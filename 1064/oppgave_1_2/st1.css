@@ -1,0 +1,196 @@
+.main .st1 {
+  grid-area: first;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "street street street status status"
+    "street street street consump total"
+    "street street street real real";
+}
+
+.st1 .street {
+  grid-area: street;
+  padding: 15px;
+  margin-right: 15px;
+  border-radius: 9px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+    "streettext streettext streettext empty"
+    "solarimg solarimg solarimg solarimg"
+    "dots dots dots dots"
+    "streettext2 progress-container progress-container progress-container";
+}
+.st1 .street .text {
+  grid-area: streettext;
+  font-size: 0.95rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+ 
+}
+.st1 .street .text2 {
+  grid-area: streettext2;
+  font-size: 0.9rem;
+  top: -10px;
+  font-weight: bold;
+  align-items: center;
+}
+.text2 i{
+  font-size: 0.7rem;
+  opacity: 0.5;
+}
+
+.st1 .street .solarimg {
+  grid-area: solarimg;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+}
+.st1 .street .solarimgs {
+  width: 48%;
+  height: auto;
+  border-radius: 8%
+}
+.st1 .street .progress-container {
+  grid-area: progress-container;
+  position: relative;
+  top: -10px;
+  width: 100%;
+  height: 5px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  margin: 40px 0;
+  font-size: 0.75rem;
+}
+.progress-container span{
+  font-size: 0.75rem;
+}
+
+.st1 .street .progress-bar {
+  height: 100%;
+  background-color: #fc9e52;
+  width: 55%; 
+  border-radius: 5px;
+}
+
+.st1 .street .percentage-text {
+  position: absolute;
+  width: 100%;
+  top: -25px; 
+  right: -50%;
+  font-weight: bold;
+  color: #fd8828;
+}
+
+.st1 .street .labels {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  top: -25px; 
+  font-weight: bold;
+  color: #333;
+}
+
+.dot {
+  top: 15px;
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: #3a3a3a;
+  border-radius: 50%;
+  margin-right: 5px; 
+}
+
+.dot:hover{
+  width: 10px;
+  height: 10px;
+}
+
+.dots {
+  grid-area: dots;
+  height: 10px;
+  top: 15px;
+  display: flex;
+  margin-top: 19px;
+  justify-content: center;
+}
+
+
+.st1 .status {
+  grid-area: status;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 9px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.st1 .consump {
+  grid-area: consump;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 9px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.st1 .total {
+  grid-area: total;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 9px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.st1 .real {
+  padding: 10px;
+  grid-area: real;
+  height: auto;
+  margin: 5px;
+  border-radius: 9px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.st1 .real .usagereal {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+}
+
+.st1 .street .arrow {
+  font-size: 22px;
+  border-radius: 25%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(51, 51, 51, 0.4) 2px 2px, rgba(78, 78, 78, 0.1) 4px 4px;
+}
+
+
+.st1 .street .arrow:hover{
+  font-size: px;
+}
+
+.st1 .status {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.smallgrey {
+  opacity: 60%;
+  font-size: 12px;
+  font-style: normal;
+}
+
+
+.Bigletter {
+  padding-top: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.kwh {
+  opacity: 55%;
+  font-size: 12px;
+  font-style: normal;
+}

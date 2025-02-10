@@ -1,0 +1,144 @@
+/* 
+
+.graph .labels.x-labels {
+  text-anchor: middle;
+}
+
+.graph .labels.y-labels {
+  text-anchor: end;
+}
+
+.graph {
+  height: 500px;
+  width: 800px;
+}s
+
+.graph .grid {
+  stroke: #ccc;
+  stroke-dasharray: 0;
+  stroke-width: 1;
+} */
+
+/* .labels {
+  font-size: 13px;
+} */
+
+/* .label-title {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+  fill: black;
+} */
+
+/* .data {
+  fill: red;
+  stroke-width: 1;
+} */
+
+.main .st3 {
+  grid-area: third;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 9px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  padding: 10px 20px 10px 20px ; 
+}
+
+.st3 .bottom-st3{
+  font-size: 0.8rem;
+  display: flex;
+  gap: 2rem;
+}
+.bottom-st3 p{
+  color: #8d8d8d;
+  padding-left: 0.7em;
+  font-weight: 600;
+}
+.bottom-st3 p:nth-child(1){
+  border-left: 3px solid orange;
+}
+.bottom-st3 p:nth-child(2){
+  border-left: 3px solid blue;
+}
+.bottom-st3 p:nth-child(3){
+  border-left: 3px solid green;
+}
+
+.st3 .st3-svg{
+  display: block;
+  width: 95%;
+  /* height: 100%; */
+  background: no-repeat center/contain;
+}
+
+.st3 .top-st3{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 0;
+}
+.st3 .top-st3 .top-left{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.top-st3 p:nth-child(1){
+  font-weight: 600;
+}
+.top-st3 p:nth-child(2){
+  font-size: 0.7rem;
+  color: #8d8d8d;
+}
+.top-st3 span{
+  color: rgb(255, 123, 0);
+}
+.st3 .top-right{
+  display: flex;
+  gap: 0.8rem;
+  color: #8d8d8d;
+  font-size: 0.8rem;
+  font-weight: 600;
+  align-items: center;
+  justify-content: end;
+}
+
+.st3 .model{
+  font-size: 0.60rem;
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  box-shadow: 0px 4px 8px rgba(2, 3, 3, 0.2);
+  border: 1px solid rgb(202, 202, 202);
+  border-radius: 9px;
+  padding: 0 10px 0 10px;
+  z-index: 99;
+  position: absolute;
+  top: 150px;
+  left: 150px;
+}
+.left-model p{
+  padding-left: 0.7em;
+  color: #696969;
+}
+.left-model p:nth-child(1){
+  border-left: 3px solid orange;
+}
+.left-model p:nth-child(2){
+  border-left: 3px solid blue;
+
+}
+.left-model p:nth-child(3){
+  border-left: 3px solid green;
+
+}
+
+.right-model{
+  font-weight: 600;
+  padding-left: 2rem;
+}
+
+
