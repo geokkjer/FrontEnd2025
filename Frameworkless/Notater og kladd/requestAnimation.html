@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS platform game</title>
+    <style>
+        body {
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #gameCanvas {
+            background: blue;
+            border: 5px solid white;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas">
+        <script>
+            const canvas = document.getElementById('gameCanvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = 800;
+            canvas.height = 720;
+            let x = 10;
+            let y = 50;
+            let retningX = 5;
+            let retningY = -5;
+            let bredde = 50;
+            let høyde = 50;
+
+            gameLoop();
+
+            function gameLoop(){
+                ctx.clearRect( 0 ,0 ,800 ,720 );
+                x += retningX;
+                y += retningY;
+                if (x > canvas.width - bredde || x < 0){
+                    retningX = -retningX;
+                }
+                if (y > canvas.height - høyde || y < 0){
+                    retningY = -retningY
+                }
+                ctx.fillRect(x,y,bredde,høyde);
+                requestAnimationFrame(gameLoop);
+                // setTimeout(gameLoop, 1000 / 60)
+
+            }
+        </script>
+    </canvas>
+</body>
+</html>
