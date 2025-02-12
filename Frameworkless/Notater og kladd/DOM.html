@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <body onload="updateView()">
+        <div id="app"></div>
+        <script>
+        //   function updateView() {
+        //     const startTime = performance.now();
+        //     document.getElementById("app").innerHTML = /*html*/ `
+        //         <h1>Hei, verden!</h1>
+        //         <p>Dette er en test av innerHTML.</p>
+        //         `;
+        //     const endTime = performance.now();
+        //     const timeUsed = endTime - startTime;
+        //     document.getElementById("app").innerHTML += /*html*/ `
+        //             <p>Tid brukt: ${timeUsed.toFixed(2)} ms</p>
+        //             `;
+        //   }
+        function updateView(){
+            const startTime = performance.now();
+            const app = document.getElementById('app');
+            const heading = document.createElement('h1');
+            heading.textContent = 'Hei, verden!';
+            app.appendChild(heading);
+            const paragraph = document.createElement('p');
+            paragraph.textContent = 'Dette er en test av createElement.';
+            app.appendChild(paragraph);
+            const endTime = performance.now();
+            const timeUsed = endTime - startTime;
+            const timeParagraph = document.createElement('p');
+            timeParagraph.textContent = `Tid brukt: ${timeUsed.toFixed(2)} ms`;
+            app.appendChild(timeParagraph) 
+        }
+        </script>
+    
+</body>
+</html>
