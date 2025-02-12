@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript platform game</title>
+    <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body onload="runGame()">
+    <!-- Game art by: https://bevouliin.com/ -->
+    <canvas id="gameCanvas"></canvas>
+    <img id="playerImg" src="../img/player.png" />
+    <img id="backgroundImg" src="../img/background.png" />
+
+    <script>
+        function runGame() {
+            const canvas = document.getElementById('gameCanvas');
+            const ctx = canvas.getContext('2d');
+            const gameModel = initGameModel();
+            canvas.width = gameModel.game.width;
+            canvas.height = gameModel.game.height;
+            const animate = () => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                updatePlayer(gameModel);
+                updateBackground(gameModel);
+                drawBackground(ctx, gameModel);
+                drawPlayer(ctx, gameModel);
+                if (gameModel.game.isRunning) {
+                    requestAnimationFrame(animate);
+                }
+            };
+            animate();
+        }
+
+        function drawBackground(ctx, gameModel) {
+            const background = gameModel.background;
+            drawSpriteFrame(ctx, gameModel.images.background, background);
+            const backgroundImageEndX = background.x + background.width;
+            if (backgroundImageEndX < gameModel.game.width) {
+                drawSpriteFrame(ctx, gameModel.images.background, { ...background, x: background.x + background.width - 1 });
+            }
+        }
+
+        function updateBackground(gameModel) {
+            const background = gameModel.background;
+            updateSprite(gameModel, background);
+            background.x = background.x < -background.width
+                ? 0
+                : background.x + background.speedX;
+        }
+
+        function drawPlayer(ctx, gameModel) {
+            drawSpriteFrame(ctx, gameModel.images.player, gameModel.player);
+        }
+
+        function updatePlayer(gameModel) {
+            const newX = gameModel.player.x + gameModel.player.speedX;
+            const maxX = gameModel.game.width - gameModel.player.width;
+            gameModel.player.x = clamp(newX, 0, maxX);
+            updateSprite(gameModel, gameModel.player);
+        }
+
+        function initGameModel() {
+            const gameModel = {
+                game: {
+                    width: 800,
+                    height: 720,
+                    score: 0,
+                    spriteAnimationSkip: 3,
+                    isRunning: true,
+                },
+                player: {
+                    x: 0,
+                    // y: 0,
+                    width: 200,
+                    height: 200,
+                    speedX: 0,
+                    speedY: 0,
+                    downForce: 1,
+                    spriteIndex: 0,
+                    state: 0,
+                    spriteCounts: [7, 9],
+                },
+                background: {
+                    x: 0,
+                    y: 0,
+                    width: 2400,
+                    height: 720,
+                    speedX: -2,
+                    speedY: 0,
+                    spriteIndex: 0,
+                    state: 0,
+                    spriteCounts: [1],
+                },
+                images: {
+                    player: getImage('player'),
+                    enemy: getImage('enemy'),
+                    background: getImage('background'),
+                },
+            };
+            gameModel.player.y = gameModel.game.height - gameModel.player.height;
+            return gameModel;
+        }
+
+        function getImage(name) {
+            return document.getElementById(name + 'Img');
+        }
+
+        function clamp(value, min, max) {
+            return Math.min(Math.max(value, min), max);
+        };
+
+        function drawSpriteFrame(ctx, image, objectModel) {
+            const { x, y, width, height, spriteIndex, state } = objectModel;
+            const frameY = state * height;
+            const frameX = spriteIndex * width;
+
+            ctx.drawImage(image, frameX, frameY,
+                width, height, x, y,
+                width, height);
+        }
+
+
+        function updateSprite(gameModel, gameObject) {
+            if (!gameObject.spriteSkipIndex) {
+                gameObject.spriteSkipIndex = gameModel.game.spriteAnimationSkip;
+            } else {
+                gameObject.spriteSkipIndex--;
+                return;
+            }
+            const spriteCount = gameObject.spriteCounts[gameObject.state];
+            gameObject.spriteIndex = (gameObject.spriteIndex + 1) % spriteCount;
+        }
+
+    </script>
+</body>
+
+</html>

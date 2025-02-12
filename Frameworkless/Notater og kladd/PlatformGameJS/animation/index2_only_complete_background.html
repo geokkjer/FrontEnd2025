@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript platform game</title>
+    <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body onload="runGame()">
+    <!-- Game art by: https://bevouliin.com/ -->
+    <canvas id="gameCanvas"></canvas>
+    <img id="playerImg" src="../img/player.png" />
+    <img id="backgroundImg" src="../img/background.png" />
+
+    <script>
+        function runGame() {
+            const canvas = document.getElementById('gameCanvas');
+            const ctx = canvas.getContext('2d');
+            const gameModel = initGameModel();
+            canvas.width = gameModel.game.width;
+            canvas.height = gameModel.game.height;
+            const animate = () => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                const background = gameModel.background;
+                const { x, y, width, height, speedX } = background;
+                background.x = x < -width ? 0 : x + speedX;
+                ctx.drawImage(gameModel.images.background, x, y, width, height);
+                const endX = x + width;
+                if (endX < gameModel.game.width) {
+                    ctx.drawImage(gameModel.images.background, x + width - 1, y, width, height);
+                }
+                if (gameModel.game.isRunning) {
+                    requestAnimationFrame(animate);
+                }
+            };
+            animate();
+        }
+
+        function initGameModel() {
+            const gameModel = {
+                game: {
+                    width: 800,
+                    height: 720,
+                    score: 0,
+                    spriteAnimationSkip: 3,
+                    isRunning: true,
+                },
+                background: {
+                    x: 0,
+                    y: 0,
+                    width: 2400,
+                    height: 720,
+                    speedX: -2,
+                },
+                images: {
+                    background: getImage('background'),
+                },
+            };
+            return gameModel;
+        }
+
+        function getImage(name) {
+            return document.getElementById(name + 'Img');
+        }
+    </script>
+</body>
+
+</html>

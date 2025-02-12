@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript platform game</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.29.1/ramda.min.js"
+        integrity="sha512-PVSAmDFNqey8GMII8s9rjjkCFvUgzfsfi8FCRxQa3TkPZfdjCIUM+6eAcHIFrLfW5CTFAwAYS4pzl7FFC/KE7Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/pure.js"></script>
+    <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body onload="init()">
+    <!-- Game art by: https://bevouliin.com/ -->
+    <canvas id="gameCanvas"></canvas>
+    <img id="playerImg" src="../img/player.png" />
+    <img id="enemyImg" src="../img/enemy.png" />
+    <img id="backgroundImg" src="../img/background.png" />
+    <script>
+        function init() {
+            const canvas = document.getElementById('gameCanvas');
+            const ctx = canvas.getContext('2d');
+            const meta = initMetadata();
+            canvas.width = meta.game.width;
+            canvas.height = meta.game.height;
+            const keys = { right: false, left: false, up: false };
+            const handleKey = keyboardEvent => {
+                const key = keyboardEvent.key;
+                if (!key.startsWith('Arrow')) return;
+                const fieldName = key.substring(5).toLowerCase();
+                const isDown = keyboardEvent.type.endsWith('down');
+                keys[fieldName] = isDown;
+                keyboardEvent.preventDefault();
+            };
+            window.addEventListener('keydown', handleKey);
+            window.addEventListener('keyup', handleKey);
+            const imageInFieldFromName = (obj, name) => R.assoc(name, document.getElementById(name + 'Img'), obj);
+            const images = ['background', 'player', 'enemy'].reduce(imageInFieldFromName, {});
+            const gameLoop = state => {
+                ctx.clearRect(0, 0, meta.game.width, meta.game.height);
+                const params = { state, meta, keys };
+                const drawActions = getDrawActions(params);
+                for (let drawAction of drawActions) {
+                    const image = images[drawAction.image];
+                    if (drawAction.hasOwnProperty('text')) {
+                        const text = drawAction.text;
+                        ctx.font = "50px arial";
+                        ctx.shadowColor = "black";
+                        ctx.shadowBlur = 7;
+                        ctx.lineWidth = 5;
+                        ctx.fillStyle = "white";
+                        ctx.strokeText(text, 550, 100);
+                        ctx.shadowBlur = 0;
+                        ctx.fillText(text, 550, 100);
+                    } else if (drawAction.hasOwnProperty('frameX')) {
+                        ctx.drawImage(image, drawAction.frameX, drawAction.frameY,
+                            drawAction.width, drawAction.height,
+                            drawAction.x, drawAction.y,
+                            drawAction.width, drawAction.height,
+                        );
+                    } else {
+                        ctx.drawImage(image, drawAction.x, drawAction.y);
+                    }
+                }
+                const returnValue = update(params);
+                const newState = returnValue.state;
+                if (newState.isRunning) {
+                    requestAnimationFrame(() => gameLoop(newState));
+                }
+            };
+            const initialState = initState(meta);
+            gameLoop(initialState);
+        }
+
+        function initMetadata() {
+            return {
+                game: {
+                    width: 800,
+                    height: 720,
+                    downforce: 1,
+                },
+                player: {
+                    y: 720 - 200,
+                    width: 200,
+                    height: 200,
+                    spriteCounts: [9, 7],
+                },
+                enemy: {
+                    y: 720 - 60,
+                    width: 80,
+                    height: 60,
+                    spriteCounts: [6],
+                },
+                background: {
+                    width: 2400,
+                }
+            };
+        }
+
+        function initState(meta) {
+            return {
+                score: 0,
+                isRunning: true,
+                background: stateObj(0, 0, -2, 0),
+                player: stateObj(0, meta.player.y, 0, 0, 0, 0, 0),
+                enemy: stateObj(meta.game.width, meta.enemy.y, -1, 0, 0, 0, 0),
+            };
+        }
+
+        function stateObj(x, y, speedX, speedY, spriteIndex, spriteSkipIndex, mode) {
+            if (spriteIndex === undefined) return { x, y, speedX, speedY };
+            return { x, y, speedX, speedY, spriteIndex, spriteSkipIndex, mode };
+        }
+    </script>
+
+</body>
+
+</html>
