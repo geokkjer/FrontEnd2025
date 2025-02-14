@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>colorPicker Test</title>
+  </head>
+  <body>
+    <button onclick="changeBackground('lightgreen')">Lysegrønn</button>
+    <input
+      type="text"
+      id="field"
+      oninput="fieldName=this.value"
+      value="background"
+    />
+    <button onclick="updateBackground()">Update</button>
+    <script>
+      let fieldName;
+      
+      let changeBackgroundColorTo = color => () => document.body.style.backgroundColor = color;
+      const registry = {
+        background1: changeBackgroundColorTo("green"), //function () {document.body.style.backgroundColor = "green"},
+        background2: changeBackgroundColorTo("orange"), //() => document.body.style.backgroundColor = "orange",
+        background3: changeBackgroundColorTo("blue"), //() => document.body.style.backgroundColor = "blue",
+      };
+    //   function changeBackgroundColorTo(color) {
+    //     return function () {
+    //       document.body.style.backgroundColor = color;
+    //     };
+    //   }
+      //   function changeBackgroundToGreen() {
+      //     document.body.style.backgroundColor = "green";
+      //   }
+      //   function changeBackgroundToOrange() {
+      //     document.body.style.backgroundColor = "orange";
+      //   }
+      //   function changeBackgroundToBlue() {
+      //     document.body.style.backgroundColor = "blue";
+      //   }
+      function updateBackground(){
+           const myfunction = registry[fieldName];
+           myfunction();
+         }
+      //   function changeBackground(color) {
+      //     document.body.style.backgroundColor = color;
+      //   }
+      //   function myfunction1(a, b) {
+      //     const product = a * b;
+      //     console.log(product);
+      //     return product;
+      //   }
+      //   let myfunction2 = function (a,b){
+      //     const produkt = a * b;
+      //     console.log(produkt);
+      //     return produkt;
+      //   }
+      //   let myfunction3 = (a, b) => a * b;
+      //   let myfunction4 = (a, b) => {
+      //     return a * b;
+      //   };
+    </script>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+      est laborum. Id omnis asperiores aperiam. Vero ut accusantium rerum
+      cupiditate natus reprehenderit beatae. Non nam est alias aspernatur modi
+      ratione odio nam eveniet. Molestiae ut dolorum velit voluptas. Nesciunt
+      perspiciatis sit. Sunt accusantium recusandae autem itaque eos dolores
+      commodi. Nesciunt consectetur id dolorem dignissimos autem sint. Quaerat
+      culpa accusantium. Iure aut inventore dolore illum eveniet. Minus aliquid
+      nobis magnam voluptas sit explicabo similique dolor. Necessitatibus et
+      rerum omnis et dolore eum. Voluptate quos molestiae eaque blanditiis
+      vitae. Laborum eius aut enim. Sit est enim laboriosam eveniet cum quaerat
+      voluptates. Qui quis molestias sit. Maiores dolorum veniam tempora
+      doloremque et nesciunt laboriosam ex dolorum. Temporibus quos iusto quo ut
+      cum est est.
+    </p>
+  </body>
+</html>
