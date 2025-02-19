@@ -1,5 +1,8 @@
+import { points, pointsPerClick, smileyIndex } from "./model.js"
+import updateView from "./view.js";
+
 // controller
-function doClick() {
+ doClick = () => {
     points += pointsPerClick;
     smileyIndex = 1 - smileyIndex;
     updateView();
@@ -11,3 +14,4 @@ function buyUpgrade() {
     pointsPerClick++;
     updateView();
 }
+export default { doClick, buyUpgrade };
