@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        1. Fjerne globale variabler (hvorfor?)
+        2. addEventListener (fordi vi må det når vi kommer til moduler)
+        3. Hvordan binder vi inn argumenter? 
+        4. Funksjon som returnerer funksjon
+        5. Currying og partial application
+            function greet(greeting, ending, name) {
+            return `${greeting}, ${name}${ending}`;
+            }        
+        6. JavaScript bind
+            - partial application vha. bind
+            - bind mot objekter: https://www.w3schools.com/js/js_function_bind.asp
+    -->
+    
+    <button onclick="setColorTheme('lightgreen', 'black')">Grønn på svart</button>
+    <button onclick="setColorTheme('lightblue', 'darkblue')">Lyseblå på mørkeblå</button>
+    <button onclick="setColorTheme('red', 'orange')">Rød på oransje</button>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <script>
+        const bodyStyle = document.body.style;
+
+        function setColorTheme(color1, color2){
+            bodyStyle.color = color1;
+            bodyStyle.backgroundColor= color2;
+        }
+    </script>
+
+
+</body>
+</html>

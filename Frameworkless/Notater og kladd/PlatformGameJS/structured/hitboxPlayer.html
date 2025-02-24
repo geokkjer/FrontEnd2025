@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript platform game</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="js/background.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/enemy.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/inputHandler.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/sprite.js"></script>
+</head>
+
+<body>
+    <!-- Game art by: https://bevouliin.com/ -->
+    <canvas id="gameCanvas"></canvas>
+    <img id="playerImg" src="img/player.png" />
+    <img id="enemyImg" src="img/enemy.png" />
+    <img id="backgroundImg" src="img/background.png" />
+    <script>
+        window.addEventListener('load', drawPlayerHitbox);
+
+        function drawPlayerHitbox() {
+            const canvas = document.getElementById('gameCanvas');
+            const ctx = canvas.getContext('2d');
+            const gameModel = initGameModel();
+            canvas.width = gameModel.game.width;
+            canvas.height = gameModel.game.height;
+            window.addEventListener('keydown', e => handleKey(true, e.key, gameModel));
+            window.addEventListener('keyup', e => handleKey(false, e.key, gameModel));
+            gameModel.player.x = 100;
+            gameModel.player.y = 100;
+
+            drawPlayer(ctx, gameModel);
+            const { x, y, width, height } = gameModel.player;
+
+            const hitboxMargins = { left: 10, top: 20, right: 30, bottom: 20 };
+
+            ctx.strokeRect(
+                x + hitboxMargins.left,
+                y + hitboxMargins.top,
+                width - hitboxMargins.right - hitboxMargins.left,
+                height - hitboxMargins.bottom - hitboxMargins.top);
+        }
+    </script>
+</body>
+
+</html>
