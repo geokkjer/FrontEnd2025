@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <link rel="stylesheet" href="css/vinlotterix.css" />
+    <!-- <script src="js/model.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/drawPageController.js"></script>
+    <script src="js/drawPageView.js"></script>
+    <script src="js/winnersPageView.js"></script> -->
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+    <script type="module">
+        import updateViewDrawPage from "./js/drawPageView.js";
+        import updateViewWinnersPage from "./js/winnersPageView.js";
+        import model from "./js/model.js";
+        window.updateView = function () {
+            if (model.app.currentPage === 'draw') updateViewDrawPage();
+            else if (model.app.currentPage === 'winners') updateViewWinnersPage();
+        }
+        window.updateView();
+    </script>
+</body>
+
+</html>

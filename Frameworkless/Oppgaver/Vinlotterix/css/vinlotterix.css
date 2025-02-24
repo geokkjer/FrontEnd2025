@@ -1,0 +1,84 @@
+
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 120%;
+}
+
+button, input {
+    font-size: 100%;
+}
+
+div.page {
+    padding-top: 4px;
+    padding-left: 4px;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 200px 2fr;
+    grid-template-rows: 40px 1fr;
+    grid-template-areas: 'meny header' 'meny innhold';
+    background-color: rgb(250, 250, 250);
+}
+
+div.pageUtenMeny {
+    grid-template-columns: 0px 2fr;
+}
+
+div.meny {
+    grid-area: meny;
+    overflow: hidden;
+}
+
+div.innhold {
+    grid-area: innhold;
+}
+
+div.header {
+    grid-area: header;
+}
+
+div.header, div.innhold {
+    padding-left: 6px;
+    padding-top: 8px;
+}
+
+div.menu {
+    height: 100%;
+}
+
+div.screen {
+    border: 1px solid gray;
+    float: left;
+    height: 200px;
+    width: 170px;
+    margin-left: 20px;
+    background-color: rgb(250, 250, 250);
+    color: black;
+    padding: 0px 4px;
+}
+
+span {
+    color: rgb(137,24,38);
+    font-weight: bolder;
+}
+
+button.knapp {
+    background-color: rgb(137,24,38);
+    color: rgb(250, 250, 250);
+}
+
+button.litenKnapp {
+    font-size: 60%;
+}
+
+button.fixed {
+    padding-left: 8%;
+    padding-top: 2%;
+    margin-top: 4%;
+    margin-left: 3%;
+    width: 80%;
+}
+
+.førsteTrekning {
+    color: green;
+}
