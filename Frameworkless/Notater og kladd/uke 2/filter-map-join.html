@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const people = [
+        { name: "Alice", age: 24 },
+        { name: "Charlie", age: 32 },
+        { name: "Bob", age: 17 },
+        { name: "Diana", age: 29 },
+      ];
+
+      let html = /*html*/ `
+        <ul>
+            <li>
+            ${people.filter((p) => p.age > 18).}
+            </li>
+        </ul`;
+      document.body.innerHTML = html;
+    </script>
+  </body>
+</html>
