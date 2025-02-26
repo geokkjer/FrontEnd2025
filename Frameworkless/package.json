@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "@mostly-adequate/support": "^2.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
   }
 }

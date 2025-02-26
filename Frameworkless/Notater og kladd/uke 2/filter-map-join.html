@@ -17,11 +17,16 @@
         .filter(p => p.age > 18)
         .map(n => `<li>Name: <b>${n.name}</b> Age: ${n.age}</li>`)
         .join('');
-
-      let html = /*html*/ `
+      let tall = [3,7]
+      let sum = tall.reduce((sum, tall)=>tall+sum,0);
+      let alleNavn = ['Per', 'Pål', 'Espen'];
+      let html = alleNavn.reduce((htmlListe, navn)=>htmlListe + `<li>${navn}</li>`, '<ul>') + '</ul>';
+      html += /*html*/ `
         <ul>
             ${filterOverAge}
-        </ul`;
+        </ul>
+        <br/>
+        <p>Tall ${tall} sum ${sum}`;
       document.body.innerHTML = html;
     </script>
   </body>
