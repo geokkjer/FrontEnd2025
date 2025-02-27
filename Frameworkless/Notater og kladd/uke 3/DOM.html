@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+   
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>Framework</th>
+        <th>GitHub Stars</th>
+      </tr>
+      <tr>
+        <td>Vue</td>
+        <td>118917</td>
+      </tr>
+      <tr>
+        <td>React</td>
+        <td>115392</td>
+      </tr>
+    </table>
+    <script>
+        const SELECTOR = 'tr:nth-child(3) > td';
+        const cell = document.querySelector(SELECTOR);
+        cell.style.backgroundColor = 'red'
+    </script>
+  </body>
+</html>
