@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sliding puzzle</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- <div id="app">
+        <div class="grid">
+            ${numbers}
+        </div>
+        <div>Antall trekk: ${model.count}</div>
+    </div> -->
+    <section class="slidingPuzzle">
+      <header class="header">
+        <h1>Sliding puzzle</h1>
+      </header>
+      <section class="main">
+        <div class="grid" data-component="numbers"></div>
+      </section>
+      <footer class="footer">
+        <span class="move-count" data-component="counter"> 1 Trekk </span>
+      </footer>
+    </section>
+  </body>
+  <script type="module" src="index.js">
+//   import clickedNumber from "../controller.js";
+//   document.getElementById(`square`).addEventListener('click' ,clickedNumber(index))
+  </script>
+</html>
