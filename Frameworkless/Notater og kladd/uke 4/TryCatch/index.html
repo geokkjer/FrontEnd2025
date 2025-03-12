@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Try Catch Async Await</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
+    />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      const app = document.getElementById("app");
+
+      function drawApp() {
+        const btn1 = document.createElement("button");
+        const search = Object.assign(document.createElement("input"), {
+          type: "text",
+          id: "search",
+          name: "searchTerm",
+        });
+        const btn2 = document.createElement("button");
+        btn1.innerHTML = "Get a Random Dad joke";
+        btn2.innerHTML = "Search";
+        btn1.addEventListener("click", () => GetJoke());
+        btn2.addEventListener("click", () => searchJoke(search.value));
+        app.appendChild(btn1);
+        app.appendChild(search);
+        app.appendChild(btn2);
+      }
+      async function GetJoke() {
+        try {
+          const JokeObject = await axios.get("https://icanhazdadjoke.com/", {
+            headers: {
+              Accept: "application/json",
+            },
+          });
+          ShowJoke(JokeObject.data.joke);
+        } catch (error) {
+          console.log("Error: ", error);
+        }
+      }
+      function ShowJoke(joke) {
+        const jokeDiv = document.createElement("div");
+        const jokeText = document.createTextNode(joke);
+        app.appendChild(jokeDiv);
+        jokeDiv.appendChild(jokeText);
+      }
+      async function searchJoke(searchTerm) {
+        try {
+          const response = await axios.get(
+            "https://icanhazdadjoke.com/search",
+            {
+              params: {
+                term: `${searchTerm}`,
+              },
+              headers: {
+                Accept: "application/json",
+              },
+            }
+          );
+          for (result of response.data.results) {
+            ShowJoke(result.joke);
+          }
+
+        } catch (error) {
+          console.log("Error: ", error);
+        }
+      }
+      drawApp();
+    </script>
+  </body>
+</html>

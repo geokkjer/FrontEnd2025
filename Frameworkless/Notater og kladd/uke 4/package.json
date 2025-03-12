@@ -1,0 +1,16 @@
+{
+  "name": "uke-4",
+  "version": "1.0.0",
+  "main": "closure.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@mostly-adequate/support": "^2.0.1",
+    "ramda": "^0.30.1"
+  }
+}
