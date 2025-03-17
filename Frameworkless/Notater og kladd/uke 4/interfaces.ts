@@ -1,59 +1,48 @@
-console.log(`interfaces.ts`)
-
-interface IIdName {
-    id: number
-    name: string
-}
-let idObject: IIdName = {
-    id: 2,
-    name: "This is a name"
+interface IComplexType {
+  id: number;
+  name: string;
 }
 
-interface IOptional {
-    id: number
-    name?: string
-}
+class ComplexType implements IComplexType {
+  id!: number;
+  name!: string;
 
-let optionalId: IOptional = {
-    id: 1
-} 
-
-interface IWeakType {
-    id?: number
-    name?: string
-}
-
-let weakNoOverlap: IWeakType = {
-    // description: "a description",
-    name: "a name"
-}
-
-interface IDescrValue {
-    descr: string
-    value: number
-}
-
-function printNameOrValue(obj: IIdName | IDescrValue): void{
-    if('id' in obj) {
-        console.log(`obj.name: ${obj.name}`)
+  constructor(idArg: number, nameArg: string);
+  constructor(idArg: string, nameArg: string);
+  constructor(idArg: any, nameArg: any) {
+    this.id = idArg;
+    this.name = nameArg;
+  }
+  print(): string {
+    return "id:" + this.id + " name:" + this.name;
+  }
+  usingTheAnyKeyword(arg1: any): any {
+    this.id = arg1;
+  }
+  usingOptionalParameters(optionalArg1?: number) {
+    if (optionalArg1) {
+      this.id = optionalArg1;
     }
-    if ('descr' in obj) {
-        console.log(`obj.value: ${obj.value}`)
+  }
+  usingDefaultParameters(defaultArg1: number = 0) {
+    this.id = defaultArg1;
+  }
+  usingRestSyntax(...argArray: number[]) {
+    if (argArray.length > 0) {
+      this.id = argArray[0];
     }
-}
-printNameOrValue(idObject)
-
-interface IPerson{
-    id: number
-    name: string
+  }
+  usingFunctionCallbacks(callback: (id: number) => string) {
+    callback(this.id);
+  }
 }
 
-type PersonPropertyName = keyof IPerson
-type PersonPropertyLiteral = "id" | "name"
+var complexType: ComplexType = new ComplexType(1, "complexType");
 
-function getProperty(key: PersonPropertyName, value: IPerson){
-    console.log(`${key} = ${value[key]}`)
-}
+var complexType_2: ComplexType = new ComplexType(2, "complexType_2");
 
-getProperty("id", {id:1, name: "FirstName"})
-getProperty("name", {id:2, name: "lastName"})
+const writeToTerm = () => {
+  console.log(complexType.print());
+  console.log(complexType_2.print());
+};
+writeToTerm();
