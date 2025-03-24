@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullstack App</title>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <h1>Hello from the static HTML!</h1>
+    <button onclick="getDataAsync()">Get async</button>
+    <button onclick="getDataSync()">Get sync</button>
+
+    <script>
+        let callCounterMain = 0;
+
+        function getDataSync() {
+            let callCounter = ++callCounterMain;
+            const startTimeMillis = Date.now();
+            console.log(`starting ${callCounter}`);
+            axios.post(`/sync-read?callCounter=${callCounter}`)
+                .then(response => {
+                    const spentMillis = Date.now() - startTimeMillis;
+                    console.log(`finished ${callCounter} - spent ${spentMillis}ms`);
+                });
+        }
+        
+        async function getDataAsync() {
+            let callCounter = ++callCounterMain;
+            const startTimeMillis = Date.now();
+            console.log(`starting ${callCounter}`);
+            const response = await axios.post(`/async-read?callCounter=${callCounter}`);
+            const spentMillis = Date.now() - startTimeMillis;
+            console.log(`finished ${callCounter} - spent ${spentMillis}ms`);
+        }
+
+    </script>
+</body>
+
+</html>
