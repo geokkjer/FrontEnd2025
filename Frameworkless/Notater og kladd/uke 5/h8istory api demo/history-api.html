@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>History API</title>
+  </head>
+  <body>
+    <h1>History API demo</h1>
+    <p id="content"></p>
+    <button onclick="pushState(1)">Gå til side 1</button>
+    <button onclick="pushState(2)">Gå til side 2</button>
+    <button onclick="pushState(3)">Gå til side 3</button>
+    <button onclick="replaceState(2)">Bytt til side 2 (replace)</button>
+    <button onclick="back()">Tilbake</button>
+    <button onclick="forward()">Frem</button>
+
+    <script>
+      const content = document.getElementById("content");
+
+      function updateContent() {
+        content.textContent = `Du er på side: ${window.location.pathname}`;
+      }
+
+      function pushState(pageNo) {
+        history.pushState({ page: pageNo }, "Page " + pageNo, "/page" + pageNo);
+        updateContent();
+      }
+
+      function replaceState() {
+        history.replaceState({ page: 2 }, "Page 2", "/page2");
+        updateContent();
+      }
+
+      function back() {
+        history.back();
+      }
+
+      function forward() {
+        history.forward();
+      }
+
+      window.addEventListener("popstate", (e) => {
+        updateContent();
+      });
+    </script>
+  </body>
+</html>
