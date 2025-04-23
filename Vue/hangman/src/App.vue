@@ -4,7 +4,7 @@ import Hangman from './components/Hangman.vue';
 
 <template>
     <Hangman msg="Hangman"/>
-    <span>{{  }}</span>
+   
 </template>
 
 <style scoped>
