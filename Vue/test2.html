@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue in the browser</title>
+    <script src="https://unpkg.com/vue@latest"></script>
+</head>
+<body>
+    <div id="app">
+        Count: {{ count }}
+        <button @click="count++">Press</button>
+    </div>
+    <script>
+        const Counter = {
+            data(){
+                return {
+                    count: 0
+                }
+            }
+        }
+        Vue.createApp(Counter).mount("#app")
+    </script>
+</body>
+</html>
