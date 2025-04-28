@@ -6,18 +6,14 @@ defineProps<{ msg: string }>()
 const count = ref(0)
 const numbers = ref({
   numberValue: [3, 5, 6, 8, 1, null, 2, 4, 7],
-
 })
 
-function clickedNumber(index: number) {
+function clickedNumber(index: number): void {
   count.value++
-  console.log(index)
   let blankIndex = findBlankIndex(index);
-  console.log(blankIndex)
   if (blankIndex == null) return;
   numbers.value.numberValue[blankIndex] = numbers.value.numberValue[index];
   numbers.value.numberValue[index] = null;
-  console.log(numbers.value.numberValue)
 }
 function findBlankIndex(index: number) {
   for (let delta of [-3, -1, 1, 3]) {
@@ -32,12 +28,15 @@ function findBlankIndex(index: number) {
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
   <div id="numbers">
-    <div v-for="(nr, i) in numbers.numberValue" :key="i" :class="i % 3 === 0 ? 'flis first' : 'flis'" @click="clickedNumber(i)">{{ nr }}
+    <h1>{{ msg }}</h1>
+
+    <div v-for="(nr, i) in numbers.numberValue" :key="i" :class="i % 3 === 0 ? 'flis first' : 'flis'"
+      @click="clickedNumber(i)">{{ nr }}
     </div>
     <div style="clear: both">Antall trekk: {{ count }}</div>
   </div>
+
 </template>
 
 <style scoped>
