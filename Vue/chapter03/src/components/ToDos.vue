@@ -1,32 +1,41 @@
 <script setup lang="ts">
-</script>
+import { ref, computed, ComputedRef } from 'vue';
 
-<script>
-import { ref, computed } from 'vue';
+const createFilterFunction = (completed: boolean) => {
+  return (): Todo[] => _todo_list.value.filter((item: Todo) => item.checked === completed)
+}
 
+interface Todo {
+  id:  number
+  text: string
+  checked: boolean
+}
 const
-  _todo_text = ref(""),
-  _todo_list = ref([]),
-  _pending = computed(() => {
-    return _todo_list.value.filter(item => !item.checked)
-  }),
-  _done = computed(() => {
-    return _todo_list.value.filter(item => item.checked)
-  })
+  _todo_text = ref<string>(""),
+  _todo_list = ref<Todo[]>([
+    { id: 1, text: 'Learn Vue.js', checked: false },
+    { id: 2, text: 'Learn TypeScript', checked: false },
+    { id: 3, text: 'Learn Vue Router', checked: false },
+    { id: 4, text: 'Learn Vuex', checked: false },
+    { id: 5, text: 'Learn Composition API', checked: false },
+    { id: 6, text: 'Learn Vue CLI', checked: false }
+  ]),
+  _pending: ComputedRef<Todo[]> = computed(createFilterFunction(false)),
+  _done = computed(createFilterFunction(true))
 
 function clearToDo() {
   _todo_text.value = ""
 }
 
 function addToDo() {
-  if (_todo_text.value && _todo_text.value !== "") {
-    _todo_list.value.push({
-      id: new Date().valueOf(),
-      text: _todo_text.value,
-      checked: false,
-    })
-    clearToDo();
+  if (!_todo_text.value || _todo_text.value == "") return
+  const newToDo = {
+    id: _todo_list.value.length + 1,
+    text: _todo_text.value,
+    checked: false
   }
+  _todo_list.value.push(newToDo)
+  clearToDo()
 }
 </script>
 
@@ -61,7 +70,6 @@ function addToDo() {
     </div>
     <div class="w3-padding" v-show="_pending.length == 0">No tasks
     </div>
-    <!-- List of completed tasks -->
     <div class="w3-padding w3-blue">Completed ({{ _done.length }})
     </div>
     <div class="w3-padding" v-for="todo in _done" :key="todo.id">

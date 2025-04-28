@@ -9,7 +9,8 @@ import ToDos from "@components/ToDos.vue"
 </template>
 
 
-<style scoped>.app {
+<style scoped>
+.app {
   display: flex;
   justify-content: center;
   width: 100vw;
