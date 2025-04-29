@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, ComputedRef } from 'vue';
+import { ref, computed, type ComputedRef } from 'vue';
 
 const createFilterFunction = (completed: boolean) => {
   return (): Todo[] => _todo_list.value.filter((item: Todo) => item.checked === completed)
@@ -23,18 +23,19 @@ const
   _pending: ComputedRef<Todo[]> = computed(createFilterFunction(false)),
   _done = computed(createFilterFunction(true))
 
-function clearToDo() {
+function clearToDo(): void {
   _todo_text.value = ""
 }
 
 function addToDo() {
   if (!_todo_text.value || _todo_text.value == "") return
-  const newToDo = {
-    id: _todo_list.value.length + 1,
+  const newToDo: Todo = {
+    id: new Date().valueOf(),
     text: _todo_text.value,
     checked: false
   }
   _todo_list.value.push(newToDo)
+  console.log(newToDo.id)
   clearToDo()
 }
 </script>
