@@ -16,17 +16,17 @@ const service = {
     validateTodo(item){
         return item.text.length>0;
     },
-    makeCopy(item){
+    makeCopy(item) {
         return JSON.parse(JSON.stringify(item))
     },
-    toggleStatus(status){
+    toggleStatus(status: "not_started" | "in_progress" | "completed"): "not_started" | "in_progress" | "completed" {
         switch(status){
             case "not_started":
-                return "in_progress"
+                return "in_progress";
             case "in_progress":
-                return "completed"
+                return "completed";
             case "completed":
-                return "not_started"
+                return "not_started";
         }
     }
 }
