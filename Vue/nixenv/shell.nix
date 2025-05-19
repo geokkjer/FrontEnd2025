@@ -1,12 +1,19 @@
-with import <nixpkgs> {};
+{
+  pkgs ? import <nixpkgs> {
+    config = {
+      allowUnfree = true;
+    };
+  },
+}:
 
-stdenv.mkDerivation {
-    name = "node";
-    buildInputs = [
-        nodejs
+pkgs.mkShell {
+    packages = with pkgs; [
+    nodejs
+    macchina
+    deno
     ];
-    shellHook = ''
+
+ shellHook = ''
         export PATH="$PWD/node_modules/.bin/:$PATH"
-        alias run='npm run'
     '';
 }
