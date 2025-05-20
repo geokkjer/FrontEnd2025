@@ -2,7 +2,7 @@
 import ParentBasic from "./components/basic/ParentBasic.vue";
 import MessageBus from "./components/bus/ParentBus.vue"
 // import SimpleState from "./components/simple/ParentSimple.vue"
-// import PiniaStore from "./components/pinia/ParentPinia.vue"
+import PiniaStore from "./components/pinia/ParentPinia.vue"
 // import SessionExperiment from "./components/session_storage/ParentSession.vue"
 </script>
 

@@ -32,4 +32,4 @@ const useCounterStore = defineStore('counter', () => {
     return { count, doubleCount, inRange, increment, decrement }
 });
 
-export {useCounterStore };
+export { useCounterStore };
