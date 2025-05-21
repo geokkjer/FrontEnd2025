@@ -1,7 +1,11 @@
-<script>
-</script>
 <template>
-    <div :class="[classNameA, classNameB]"></div>
+    <div>
 
+    </div>
 </template>
-<style></style>
+
+<script setup>
+
+</script>
+
+<style lang="scss" scoped></style>

@@ -21,3 +21,4 @@ console.log(pipe(
     (x) => x * 2,
     (x) => x - 3
 )(5)); // 9
+
