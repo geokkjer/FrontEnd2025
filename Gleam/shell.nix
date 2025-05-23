@@ -13,6 +13,8 @@ pkgs.mkShell {
       erlang
       erlang-ls
       erlang-language-platform
+      inotify-tools
+      rebar3
     ];
 
  shellHook = ''
