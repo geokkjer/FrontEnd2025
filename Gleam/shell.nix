@@ -7,7 +7,8 @@
 }:
 
 pkgs.mkShell {
-    packages = with pkgs; [
+  name = "gleam-dev-environment";
+  packages = with pkgs; [
       gleam
       glas
       erlang
@@ -18,5 +19,6 @@ pkgs.mkShell {
     ];
 
  shellHook = ''
+
     '';
 }
