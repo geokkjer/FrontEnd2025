@@ -1,0 +1,84 @@
+# Gleam
+build/
+*.beam
+*.ez
+.gleam_store/
+erl_crash.dump
+
+# Erlang/OTP
+*.beam
+*.boot
+*.script
+ebin/
+rel/
+deps/
+logs/
+_build/
+.rebar3
+rebar3.crashdump
+*~
+
+# Node.js / npm
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn-integrity
+
+# TailwindCSS generated files
+static/output.css
+static/dist/
+dist/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE/Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Nix
+result
+result-*
+
+# Direnv
+.direnv/
