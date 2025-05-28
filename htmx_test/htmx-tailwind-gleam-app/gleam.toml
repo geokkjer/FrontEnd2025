@@ -1,0 +1,15 @@
+name = "htmx-tailwind-gleam-app"
+version = "0.1.0"
+description = "A simple project using htmx, Tailwind CSS, and Gleam."
+authors = ["Your Name <you@example.com>"]
+license = "MIT"
+
+[dependencies]
+gleam = "0.18.0"  # Adjust the version as necessary
+# Add other dependencies as needed
+
+[build]
+target = "native"  # or "js" depending on your target environment
+
+[profile]
+release = { opt_level = 2 }

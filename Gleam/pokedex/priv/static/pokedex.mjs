@@ -1728,6 +1728,9 @@ var event_kind = 2;
 function attribute2(name, value) {
   return attribute(name, value);
 }
+function class$(name) {
+  return attribute2("class", name);
+}
 
 // build/dev/javascript/lustre/lustre/effect.mjs
 var Effect = class extends CustomType {
@@ -3870,6 +3873,9 @@ function fragment2(children) {
 function text3(content) {
   return text2(content);
 }
+function header(attrs, children) {
+  return element2("header", attrs, children);
+}
 function h1(attrs, children) {
   return element2("h1", attrs, children);
 }
@@ -4007,14 +4013,22 @@ function start3(app, selector, start_args) {
 // build/dev/javascript/pokedex/pokedex.mjs
 function main() {
   let app = element3(
-    h1(toList([]), toList([text3("Pokedex!")]))
+    header(
+      toList([class$("p-4 bg-red-500 text-white")]),
+      toList([
+        h1(
+          toList([class$("w-full mx-auto maw-w-screen-xl text-4xl font-bold")]),
+          toList([text3("Pokedex!")])
+        )
+      ])
+    )
   );
   let $ = start3(app, "#app", void 0);
   if (!$.isOk()) {
     throw makeError(
       "let_assert",
       "pokedex",
-      6,
+      14,
       "main",
       "Pattern match failed, no pattern matched the value.",
       { value: $ }
