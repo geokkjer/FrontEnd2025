@@ -1,15 +1,13 @@
-name = "htmx-tailwind-gleam-app"
-version = "0.1.0"
+name = "htmx_tailwind_gleam_app"
+version = "0.0.0"
 description = "A simple project using htmx, Tailwind CSS, and Gleam."
-authors = ["Your Name <you@example.com>"]
-license = "MIT"
 
 [dependencies]
-gleam = "0.18.0"  # Adjust the version as necessary
-# Add other dependencies as needed
+gleam_stdlib = ">= 0.34.0"
+gleam_http = ">= 3.0.0"
+gleam_httpc = ">= 1.0.0"
+gleam_json = ">= 1.0.0"
+mist = ">= 1.0.0"
 
-[build]
-target = "native"  # or "js" depending on your target environment
-
-[profile]
-release = { opt_level = 2 }
+[dev-dependencies]
+gleeunit = ">= 1.0.0"

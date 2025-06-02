@@ -1,7 +1,19 @@
-fn main() {
-    let server = gleam::http::Server::new();
-    let router = web::router::router();
+import gleam/io
+import mist
+import gleam/http/request.{type Request}
+import gleam/http/response.{type Response}
+import gleam/string_tree
 
-    server.route(router);
-    server.listen(4000).expect("Failed to start server");
+pub fn main() {
+  let handler = fn(_req: Request(t)) -> Response(string_tree.StringTree) {
+    response.new(200)
+    |> response.set_body(string_tree.from_string("Hello from Gleam!"))
+  }
+
+  let assert Ok(_) =
+    mist.new(handler)
+    |> mist.port(4000)
+    |> mist.start_http
+
+  io.println("Server started on http://localhost:4000")
 }
