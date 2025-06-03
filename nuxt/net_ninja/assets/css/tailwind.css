@@ -1,11 +1,19 @@
-@import "tailwindcss/preflight";
-@tailwind utilities;
+@import "tailwindcss";
 
 body {
-  @apply bg-gray-50;
+  background-color: theme(colors.gray.50);
 }
+
 @layer components {
   .btn {
-    @apply bg-[#12b488] text-white px-3 py-2 rounded-md text-sm ;
+    background-color: #12b488;
+    color: theme(colors.white);
+    padding: theme(spacing.3) theme(spacing.2);
+    border-radius: theme(borderRadius.md);
+    font-size: theme(fontSize.sm);
+    
+    &:hover {
+      background-color: color-mix(in srgb, #12b488 90%, black);
+    }
   }
 }

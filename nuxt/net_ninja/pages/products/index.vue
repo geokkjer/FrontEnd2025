@@ -2,8 +2,17 @@
 definePageMeta({
     layout: 'products',
 })
+
+const { data: products } = await useFetch('https://fakestoreapi.com/products',)
+
 </script>
 <template>
-    <div>Products</div>
+    <div>
+        <div class="grid drid-cols-4 gap-5">
+            <div v-for="p in products">
+                <ProductCard :product="p"/>
+            </div>
+        </div>
+    </div>
 </template>
 <style scoped></style>
