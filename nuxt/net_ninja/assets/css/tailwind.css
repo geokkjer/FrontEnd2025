@@ -16,4 +16,11 @@ body {
       background-color: color-mix(in srgb, #12b488 90%, black);
     }
   }
+  .card {
+    padding: theme(spacing.3);
+    border-radius: theme(borderRadius.md);
+    background-color: theme(colors.white);
+    box-shadow: theme(boxShadow.md);
+    height: 100%;
+  }
 }
